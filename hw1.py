@@ -97,7 +97,7 @@ z37 = m.addVar(vtype = GRB.BINARY, name = 'z37')
 z38 = m.addVar(vtype = GRB.BINARY, name = 'z38')
 z39 = m.addVar(vtype = GRB.BINARY, name = 'z39')
 
-#Every value j ∈ {1,2...,9} must appear in the matrix
+#Every value j ∈ {1,2...,9} must appear in the matrix once and only once.
 m.addConstr(x11+x21+x31+y11+y21+y31+z11+z21+z31 >= 1)
 m.addConstr(x12+x22+x32+y12+y22+y32+z12+z22+z32 >= 1)
 m.addConstr(x13+x23+x33+y13+y23+y33+z13+z23+z33 >= 1)
@@ -108,7 +108,7 @@ m.addConstr(x17+x27+x37+y17+y27+y37+z17+z27+z37 >= 1)
 m.addConstr(x18+x28+x38+y18+y28+y38+z18+z28+z38 >= 1)
 m.addConstr(x19+x29+x39+y19+y29+y39+z19+z29+z39 >= 1)
 
-#Each square must assume a value
+#Each square must assume one and only one value. 
 m.addConstr(x11+x12+x13+x14+x15+x16+x17+x18+x19 >= 1)
 m.addConstr(x21+x22+x23+x24+x25+x26+x27+x28+x29 >= 1)
 m.addConstr(x31+x32+x33+x34+x35+x36+x37+x38+x39 >= 1)
@@ -119,7 +119,7 @@ m.addConstr(z11+z12+z13+z14+z15+z16+z17+z18+z19 >= 1)
 m.addConstr(z21+z22+z23+z24+z25+z26+z27+z28+z29 >= 1)
 m.addConstr(z31+z32+z33+z34+z35+z36+z37+z38+z39 >= 1)
 
-#Sum constraints given in problem description. Each binary variable is multiplied by the j value it represents in order to weight 
+#Sum constraints given in problem description. Each binary variable is multiplied by the j value it represents in order to weight them to add to the appropriate value.
 m.addConstr((1*x11+2*x12+3*x13+4*x14+5*x15+6*x16+7*x17+8*x18+9*x19)+(1*y11+2*y12+3*y13+4*y14+5*y15+6*y16+7*y17+8*y18+9*y19) >= 12)
 m.addConstr((1*x11+2*x12+3*x13+4*x14+5*x15+6*x16+7*x17+8*x18+9*x19)+(1*y11+2*y12+3*y13+4*y14+5*y15+6*y16+7*y17+8*y18+9*y19) <= 12)
 
@@ -141,12 +141,12 @@ m.addConstr((1*x31+2*x32+3*x33+4*x34+5*x35+6*x36+7*x37+8*x38+9*x39)+(1*y31+2*y32
 m.addConstr((1*y31+2*y32+3*y33+4*y34+5*y35+6*y36+7*y37+8*y38+9*y39)+(1*z31+2*z32+3*z33+4*z34+5*z35+6*z36+7*z37+8*z38+9*z39) >= 15)
 m.addConstr((1*y31+2*y32+3*y33+4*y34+5*y35+6*y36+7*y37+8*y38+9*y39)+(1*z31+2*z32+3*z33+4*z34+5*z35+6*z36+7*z37+8*z38+9*z39) <= 15)
 
+#The sum of all variables Wij must equal to 9. 
 m.addConstr(x11 + x12 + x13 + x14 + x15 + x16 + x17 + x18 + x19 + x21 + x22 + x23 + x24 + x25 + x26 + x27 + x28 + x29 + x31 + x32 + x33 + x34 + x35 + x36 + x37 + x38 + x39 + y11 + y12 + y13 + y14 + y15 + y16 + y17 + y18 + y19 + y21 + y22 + y23 + y24 + y25 + y26 + y27 + y28 + y29 + y31 + y32 + y33 + y34 + y35 + y36 + y37 + y38 + y39 +z11 + z12 + z13 + z14 + z15 + z16 + z17 + z18 + z19 + z21 + z22 + z23 + z24 + z25 + z26 + z27 + z28 + z29 + z31 + z32 + z33 + z34 + z35 + z36 + z37 + z38 + z39 >= 9)
 m.addConstr(x11 + x12 + x13 + x14 + x15 + x16 + x17 + x18 + x19 + x21 + x22 + x23 + x24 + x25 + x26 + x27 + x28 + x29 + x31 + x32 + x33 + x34 + x35 + x36 + x37 + x38 + x39 + y11 + y12 + y13 + y14 + y15 + y16 + y17 + y18 + y19 + y21 + y22 + y23 + y24 + y25 + y26 + y27 + y28 + y29 + y31 + y32 + y33 + y34 + y35 + y36 + y37 + y38 + y39 +z11 + z12 + z13 + z14 + z15 + z16 + z17 + z18 + z19 + z21 + z22 + z23 + z24 + z25 + z26 + z27 + z28 + z29 + z31 + z32 + z33 + z34 + z35 + z36 + z37 + z38 + z39 <= 9)
 
 m.setObjective(0, GRB.MINIMIZE)
 m.optimize() 
-status = m.status
 
 x1dict = {x11.x: 1, x12.x: 2, x13.x: 3, x14.x: 4, x15.x: 5, x16.x: 6, x17.x: 7, x18.x: 8, x19.x: 9}
 x2dict = {x21.x: 1, x22.x: 2, x23.x: 3, x24.x: 4, x25.x: 5, x26.x: 6, x27.x: 7, x28.x: 8, x29.x: 9}
