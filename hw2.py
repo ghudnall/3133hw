@@ -4,7 +4,7 @@ import random
 import itertools
 from gurobipy import *
 poop = 'poop'
-model = Model('HW1')
+model = Model('HW2')
 n = 9
 m = 150
 c = 20
@@ -12,6 +12,8 @@ c = 20
 #set parameters
 model.setParam('OutputFlag', True)
 
+
+#Xij
 x01 = m.addVar(vtype = GRB.BINARY, name = 'x01')
 x02 = m.addVar(vtype = GRB.BINARY, name = 'x02')
 x03 = m.addVar(vtype = GRB.BINARY, name = 'x03')
