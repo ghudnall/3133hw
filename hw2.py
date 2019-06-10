@@ -3,7 +3,7 @@ import math
 import random
 import itertools
 from gurobipy import *
-
+x = 'boners'
 model = Model('HW1')
 n = 9
 m = 150
