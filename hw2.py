@@ -113,6 +113,8 @@ x96 = m.addVar(vtype = GRB.BINARY, name = 'x96')
 x97 = m.addVar(vtype = GRB.BINARY, name = 'x97')
 x98 = m.addVar(vtype = GRB.BINARY, name = 'x98')
 
+x_list = [x01, x02, x03, x04, x05, x06, x07, x08, x09, x10, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x23, x24, x25, x26, x27, x28, x29, x30, x31, x32, x34, x35, x36, x37, x38, x39, x40, x41, x42, x43, x45, x46, x47, x48, x49, x50, x51, x52, x53, x54, x56, x57, x58, x59, x60, x61, x62, x63, x64, x65, x67, x68, x69, x70, x71, x72, x73, x74, x75, x76, x78, x79, x80, x81, x82, x83, x84, x85, x86, x87, x89, x90, x91, x92, x93, x94, x95, x96, x97, x98]
+
 y1 = m.addVar(vtype = GRB.BINARY, name = 'y1')
 y2 = m.addVar(vtype = GRB.BINARY, name = 'y2')
 y3 = m.addVar(vtype = GRB.BINARY, name = 'y3')
@@ -173,13 +175,9 @@ for i,j in vars.keys():
 
 model.addConstr(sum([k1*y1 + k2*y2 + k3*y3 + k4*y4 + k5*y5 + k6*y6 + k7*y7 + k8*y8 + k9*y9]) <= c)
 
-for i in range(len(y_list)):
 
-    for j in range(len(y_list)):
-        if i == j:
-            continue
-        else:
-            model.addConstr(
+m.addConstr(sum([y_list[i]*k_list[i] for i in range(n)]) <= c)
+m.addConstr()
 
 
 model.setObjective(sum([p1*y1, p2*y2, p3*y3, p3*y4, p5*y5, p6*y6, p7*y7, p8*y8, p9*y9]), GRB.MAXIMIZE)
