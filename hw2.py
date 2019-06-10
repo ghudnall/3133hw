@@ -163,7 +163,6 @@ k8 = 9
 k9 = 10
 k_list = [k1, k2, k3, k4, k5, k6, k7, k8, k9]
 
-# dist = {'01': 21.18962, '02': 19.79899, '03': 57.55867, '12': 21.84033, '13': 51.41984}
 
 vars = model.addVars(dist.keys(), obj=dist, vtype=GRB.BINARY, name='e')
 
