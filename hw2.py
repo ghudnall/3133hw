@@ -12,7 +12,44 @@ c = 20
 #set parameters
 model.setParam('OutputFlag', True)
 
+x01 = m.addVar(vtype = GRB.BINARY, name = 'x01')
+x02 = m.addVar(vtype = GRB.BINARY, name = 'x02')
+x03 = m.addVar(vtype = GRB.BINARY, name = 'x03')
+x04 = m.addVar(vtype = GRB.BINARY, name = 'x04')
+x05 = m.addVar(vtype = GRB.BINARY, name = 'x05')
+x06 = m.addVar(vtype = GRB.BINARY, name = 'x06')
+x07 = m.addVar(vtype = GRB.BINARY, name = 'x07')
+x08 = m.addVar(vtype = GRB.BINARY, name = 'x08')
+x09 = m.addVar(vtype = GRB.BINARY, name = 'x09')
 
+x10 = m.addVar(vtype = GRB.BINARY, name = 'x01')
+x12 = m.addVar(vtype = GRB.BINARY, name = 'x02')
+x13 = m.addVar(vtype = GRB.BINARY, name = 'x03')
+x14 = m.addVar(vtype = GRB.BINARY, name = 'x04')
+x15 = m.addVar(vtype = GRB.BINARY, name = 'x05')
+x16 = m.addVar(vtype = GRB.BINARY, name = 'x06')
+x17 = m.addVar(vtype = GRB.BINARY, name = 'x07')
+x18 = m.addVar(vtype = GRB.BINARY, name = 'x08')
+x19 = m.addVar(vtype = GRB.BINARY, name = 'x09')
+
+x20 = m.addVar(vtype = GRB.BINARY, name = 'x01')
+x21 = m.addVar(vtype = GRB.BINARY, name = 'x02')
+x22 = m.addVar(vtype = GRB.BINARY, name = 'x03')
+x23 = m.addVar(vtype = GRB.BINARY, name = 'x04')
+x24 = m.addVar(vtype = GRB.BINARY, name = 'x05')
+x25 = m.addVar(vtype = GRB.BINARY, name = 'x06')
+x26 = m.addVar(vtype = GRB.BINARY, name = 'x07')
+x27 = m.addVar(vtype = GRB.BINARY, name = 'x08')
+x28 = m.addVar(vtype = GRB.BINARY, name = 'x09')
+
+x30 = m.addVar(vtype = GRB.BINARY, name = 'x01')
+x31 = m.addVar(vtype = GRB.BINARY, name = 'x02')
+x32 = m.addVar(vtype = GRB.BINARY, name = 'x03')
+x34 = m.addVar(vtype = GRB.BINARY, name = 'x05')
+x35 = m.addVar(vtype = GRB.BINARY, name = 'x06')
+x36 = m.addVar(vtype = GRB.BINARY, name = 'x07')
+x37 = m.addVar(vtype = GRB.BINARY, name = 'x08')
+x38 = m.addVar(vtype = GRB.BINARY, name = 'x09')
 
 y1 = m.addVar(vtype = GRB.BINARY, name = 'y1')
 y2 = m.addVar(vtype = GRB.BINARY, name = 'y2')
@@ -45,7 +82,7 @@ p2 = 5
 p3 = 6
 p4 = 7
 p5 = 8
-p6 = 9 
+p6 = 9
 p7 = 2
 p8 = 4
 p9 = 5
@@ -71,17 +108,17 @@ vars = model.addVars(dist.keys(), obj=dist, vtype=GRB.BINARY, name='e')
 
 for i,j in vars.keys():
     print(vars[i,j])
-    
+
 model.addConstr(sum([k1*y1 + k2*y2 + k3*y3 + k4*y4 + k5*y5 + k6*y6 + k7*y7 + k8*y8 + k9*y9]) <= c)
 
 for i in range(len(y_list)):
-    
+
     for j in range(len(y_list)):
         if i == j:
             continue
         else:
             model.addConstr(
-            
-   
+
+
 model.setObjective(sum([p1*y1, p2*y2, p3*y3, p3*y4, p5*y5, p6*y6, p7*y7, p8*y8, p9*y9]), GRB.MAXIMIZE)
 model.optimize
