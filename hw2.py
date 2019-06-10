@@ -251,6 +251,9 @@ k9 = 10
 k_list = [k1, k2, k3, k4, k5, k6, k7, k8, k9]
 
 
+(x11 * y1) + (x12 * y1)
+
+
 vars = model.addVars(dist.keys(), obj=dist, vtype=GRB.BINARY, name='e')
 
 # for i,j in vars.keys():
@@ -260,6 +263,19 @@ for i,j in vars.keys():
     print(vars[i,j])
 
 model.addConstr(sum([k1*y1 + k2*y2 + k3*y3 + k4*y4 + k5*y5 + k6*y6 + k7*y7 + k8*y8 + k9*y9]) <= c)
+
+model.addConstr(sum([x10*y1 + x12*y1 + x13*y1 + x14*y1 + x15*y1 + x16*y1 + x17*y1 + x18*y1 + x19*y1]) <= 1)
+model.addConstr(sum([x20*y2 + x21*y2 + x23*y1 + x24*y1 + x25*y1 + x26*y1 + x27*y1 + x28*y1 + x29*y1]) <= 1)
+model.addConstr(sum([x30*y3 + x31*y3 + x32*y3 + x34*y3 + x35*y3 + x36*y3 + x37*y3 + x38*y3 + x39*y3]) <= 1)
+model.addConstr(sum([x40*y4 + x41*y4 + x42*y4 + x43*y4 + x45*y4 + x46*y4 + x47*y4 + x48*y4 + x49*y4]) <= 1)
+model.addConstr(sum([x50*y5 + x51*y5 + x52*y5 + x53*y5 + x54*y5 + x56*y5 + x57*y5 + x58*y5 + x59*y5]) <= 1)
+model.addConstr(sum([x60*y6 + x61*y6 + x62*y6 + x63*y6 + x64*y6 + x65*y6 + x67*y6 + x68*y6 + x69*y6]) <= 1)
+model.addConstr(sum([x70*y7 + x71*y7 + x72*y7 + x73*y7 + x74*y7 + x75*y7 + x76*y7 + x78*y7 + x79*y7]) <= 1)
+model.addConstr(sum([x80*y8 + x81*y8 + x82*y8 + x83*y8 + x84*y8 + x85*y8 + x86*y8 + x87*y8 + x89*y8]) <= 1)
+model.addConstr(sum([x90*y9 + x91*y9 + x92*y9 + x93*y9 + x94*y9 + x95*y9 + x96*y9 + x97*y9 + x98*y9]) <= 1)
+
+
+
 
 for i in range(len(y_list)):
 
