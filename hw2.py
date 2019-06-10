@@ -44,7 +44,6 @@ x27 = m.addVar(vtype = GRB.BINARY, name = 'x27')
 x28 = m.addVar(vtype = GRB.BINARY, name = 'x28')
 x29 = m.addVar(vtype = GRB.BINARY, name = 'x29')
 
-
 x30 = m.addVar(vtype = GRB.BINARY, name = 'x30')
 x31 = m.addVar(vtype = GRB.BINARY, name = 'x31')
 x32 = m.addVar(vtype = GRB.BINARY, name = 'x32')
@@ -187,4 +186,4 @@ for i in range(len(y_list)):
 
 model.setObjective(sum([p1*y1, p2*y2, p3*y3, p3*y4, p5*y5, p6*y6, p7*y7, p8*y8, p9*y9]), GRB.MAXIMIZE)
 model.optimize
->>>>>>> 2b8e9f483945232eb29bb433658a368984809c8e
+
