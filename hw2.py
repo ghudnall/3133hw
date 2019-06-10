@@ -115,6 +115,8 @@ x96 = m.addVar(vtype = GRB.BINARY, name = 'x96')
 x97 = m.addVar(vtype = GRB.BINARY, name = 'x97')
 x98 = m.addVar(vtype = GRB.BINARY, name = 'x98')
 
+
+#Yi - whether or not we visit location i
 y1 = m.addVar(vtype = GRB.BINARY, name = 'y1')
 y2 = m.addVar(vtype = GRB.BINARY, name = 'y2')
 y3 = m.addVar(vtype = GRB.BINARY, name = 'y3')
