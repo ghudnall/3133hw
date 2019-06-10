@@ -1,12 +1,9 @@
-<<<<<<< HEAD
-FUCK
-=======
 import sys
 import math
 import random
 import itertools
 from gurobipy import *
-poop = 'poop'
+
 model = Model('HW2')
 n = 9
 m = 150
