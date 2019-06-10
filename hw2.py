@@ -12,7 +12,7 @@ c = 20
 #set parameters
 model.setParam('OutputFlag', True)
 
-
+x = 'boners'
 
 y1 = m.addVar(vtype = GRB.BINARY, name = 'y1')
 y2 = m.addVar(vtype = GRB.BINARY, name = 'y2')
