@@ -115,9 +115,9 @@ x98 = model.addVar(vtype = GRB.BINARY, name = 'x98')
 
 x_list = [
 		[x01, x02, x03, x04, x05, x06, x07, x08, x09],
-		[x10, x12, x13, x14, x15, x16, x17, x18, x19], 
-		[x20, x21, x23, x24, x25, x26, x27, x28, x29], 
-		[x30, x31, x32, x34, x35, x36, x37, x38, x39], 
+		[x10, x12, x13, x14, x15, x16, x17, x18, x19],
+		[x20, x21, x23, x24, x25, x26, x27, x28, x29],
+		[x30, x31, x32, x34, x35, x36, x37, x38, x39],
 		[x40, x41, x42, x43, x45, x46, x47, x48, x49],
 		[x50, x51, x52, x53, x54, x56, x57, x58, x59],
 		[x60, x61, x62, x63, x64, x65, x67, x68, x69],
@@ -266,8 +266,11 @@ k8 = 9
 k9 = 10
 k_list = [k1, k2, k3, k4, k5, k6, k7, k8, k9]
 
+
+#Constraint 1
 model.addConstr(sum([k1*y1 + k2*y2 + k3*y3 + k4*y4 + k5*y5 + k6*y6 + k7*y7 + k8*y8 + k9*y9]) <= c)
 
+#Constraint 2:	Sum of Xij from j=0 to 9, for all i
 for i in range(9):
 	result = []
 	index_list = []
@@ -285,8 +288,7 @@ for i in range(9):
 	# print(list(map(lambda t: 'x'+str(t[0])+str(t[1])+' ', index_list)))
 
 
-#must enter each location no more than once, no less than 0
-
+#Constraint 3: Sum of Xij from i=0 to 99, for all j
 for i in range(9):
 	result = []
 	y = y_list[i]
@@ -336,25 +338,71 @@ model.addConstr(sum([x07, x17, x27, x37, x47, x57, x67, x87, x97]) <= y7)
 model.addConstr(sum([x08, x18, x28, x38, x48, x58, x68, x78, x98]) <= y8)
 model.addConstr(sum([x09, x19, x29, x39, x49, x59, x69, x79, x89]) <= y9)
 
-#for leaving starting point
+#Constraint:	Sum of Xij from j=0 to 9, for all i
+model.addConstr(sum([x01 , x02 , x03 , x04 , x05 , x06 , x07 , x08 , x09]) >= y0)
+model.addConstr(sum([x10 , x12 , x13 , x14 , x15 , x16 , x17 , x18 , x19]) >= y1)
+model.addConstr(sum([x20 , x21 , x23 , x24 , x25 , x26 , x27 , x28 , x29]) >= y2)
+model.addConstr(sum([x30 , x31 , x32 , x34 , x35 , x36 , x37 , x38 , x39]) >= y3)
+model.addConstr(sum([x40 , x41 , x42 , x43 , x45 , x46 , x47 , x48 , x49]) >= y4)
+model.addConstr(sum([x50 , x51 , x52 , x53 , x54 , x56 , x57 , x58 , x59]) >= y5)
+model.addConstr(sum([x60 , x61 , x62 , x63 , x64 , x65 , x67 , x68 , x69]) >= y6)
+model.addConstr(sum([x70 , x71 , x72 , x73 , x74 , x75 , x76 , x78 , x79]) >= y7)
+model.addConstr(sum([x80 , x81 , x82 , x83 , x84 , x85 , x86 , x87 , x89]) >= y8)
+model.addConstr(sum([x90 , x91 , x92 , x93 , x94 , x95 , x96 , x97 , x98]) >= y9)
+
+model.addConstr(sum([x01 , x02 , x03 , x04 , x05 , x06 , x07 , x08 , x09]) <= y0)
+model.addConstr(sum([x10 , x12 , x13 , x14 , x15 , x16 , x17 , x18 , x19]) <= y1)
+model.addConstr(sum([x20 , x21 , x23 , x24 , x25 , x26 , x27 , x28 , x29]) <= y2)
+model.addConstr(sum([x30 , x31 , x32 , x34 , x35 , x36 , x37 , x38 , x39]) <= y3)
+model.addConstr(sum([x40 , x41 , x42 , x43 , x45 , x46 , x47 , x48 , x49]) <= y4)
+model.addConstr(sum([x50 , x51 , x52 , x53 , x54 , x56 , x57 , x58 , x59]) <= y5)
+model.addConstr(sum([x60 , x61 , x62 , x63 , x64 , x65 , x67 , x68 , x69]) <= y6)
+model.addConstr(sum([x70 , x71 , x72 , x73 , x74 , x75 , x76 , x78 , x79]) <= y7)
+model.addConstr(sum([x80 , x81 , x82 , x83 , x84 , x85 , x86 , x87 , x89]) <= y8)
+model.addConstr(sum([x90 , x91 , x92 , x93 , x94 , x95 , x96 , x97 , x98]) <= y9)
+
+#Constraint:	Sum of Xij from j=0 to 9, for all i
+model.addConstr(sum([x10 , x20 , x30 , x40 , x50 , x60 , x70 , x80 , x90]) >= y0)
+model.addConstr(sum([x01 , x21 , x31 , x41 , x51 , x61 , x71 , x81 , x91]) >= y1)
+model.addConstr(sum([x02 , x12 , x32 , x42 , x52 , x62 , x72 , x82 , x92]) >= y2)
+model.addConstr(sum([x03 , x13 , x23 , x43 , x53 , x63 , x73 , x83 , x93]) >= y3)
+model.addConstr(sum([x04 , x14 , x24 , x34 , x54 , x64 , x74 , x84 , x94]) >= y4)
+model.addConstr(sum([x05 , x15 , x25 , x35 , x45 , x65 , x75 , x85 , x95]) >= y5)
+model.addConstr(sum([x06 , x16 , x26 , x36 , x46 , x56 , x76 , x86 , x96]) >= y6)
+model.addConstr(sum([x07 , x17 , x27 , x37 , x47 , x57 , x67 , x87 , x97]) >= y7)
+model.addConstr(sum([x08 , x18 , x28 , x38 , x48 , x58 , x68 , x78 , x98]) >= y8)
+model.addConstr(sum([x09 , x19 , x29 , x39 , x49 , x59 , x69 , x79 , x89]) >= y9)
+
+model.addConstr(sum([x10 , x20 , x30 , x40 , x50 , x60 , x70 , x80 , x90]) <= y0)
+model.addConstr(sum([x01 , x21 , x31 , x41 , x51 , x61 , x71 , x81 , x91]) <= y1)
+model.addConstr(sum([x02 , x12 , x32 , x42 , x52 , x62 , x72 , x82 , x92]) <= y2)
+model.addConstr(sum([x03 , x13 , x23 , x43 , x53 , x63 , x73 , x83 , x93]) <= y3)
+model.addConstr(sum([x04 , x14 , x24 , x34 , x54 , x64 , x74 , x84 , x94]) <= y4)
+model.addConstr(sum([x05 , x15 , x25 , x35 , x45 , x65 , x75 , x85 , x95]) <= y5)
+model.addConstr(sum([x06 , x16 , x26 , x36 , x46 , x56 , x76 , x86 , x96]) <= y6)
+model.addConstr(sum([x07 , x17 , x27 , x37 , x47 , x57 , x67 , x87 , x97]) <= y7)
+model.addConstr(sum([x08 , x18 , x28 , x38 , x48 , x58 , x68 , x78 , x98]) <= y8)
+model.addConstr(sum([x09 , x19 , x29 , x39 , x49 , x59 , x69 , x79 , x89]) <= y9)
+
+
+#Constraint 4:	Sum of trips out of starting point =1
 model.addConstr(sum([x01, x02, x03, x04, x05, x06, x07, x08, x09]) <= 1)
 model.addConstr(sum([x01, x02, x03, x04, x05, x06, x07, x08, x09]) >= 1)
 
-#for entering end point
+#Constraint 5:	Sum of trips back to starting point =1
 model.addConstr(sum([x10*y0 + x20*y0 + x30*y0 + x40*y0 + x50*y0 + x60*y0 + x70*y0 + x80*y0 + x90*y0]) <= 1)
 model.addConstr(sum([x10*y0 + x20*y0 + x30*y0 + x40*y0 + x50*y0 + x60*y0 + x70*y0 + x80*y0 + x90*y0]) >= 1)
 
-############
-
-model.addConstr(x01 * t01 + x02 * t02 + x03 * t03 + x04 * t04 + x05 * t05 + x06 * t06 + x07 * t07 + x08 * t08 
-	+ x09 * t09 + x10 * t10 + x12 * t12 + x13 * t13 + x14 * t14 + x15 * t15 + x16 * t16 + x17 * t17 + x18 * t18 
-	+ x19 * t19 + x20 * t20 + x21 * t21 + x23 * t23 + x24 * t24 + x25 * t25 + x26 * t26 + x27 * t27 + x28 * t28 
-	+ x29 * t29 + x30 * t30 + x31 * t31 + x32 * t32 + x34 * t34 + x35 * t35 + x36 * t36 + x37 * t37 + x38 * t38 
-	+ x39 * t39 + x40 * t40 + x41 * t41 + x42 * t42 + x43 * t43 + x45 * t45 + x46 * t46 + x47 * t47 + x48 * t48 
-	+ x49 * t49 + x50 * t50 + x51 * t51 + x52 * t52 + x53 * t53 + x54 * t54 + x56 * t56 + x57 * t57 + x58 * t58 
-	+ x59 * t59 + x60 * t60 + x61 * t61 + x62 * t62 + x63 * t63 + x64 * t64 + x65 * t65 + x67 * t67 + x68 * t68 
-	+ x69 * t69 + x70 * t70 + x71 * t71 + x72 * t72 + x73 * t73 + x74 * t74 + x75 * t75 + x76 * t76 + x78 * t78 
-	+ x79 * t79 + x80 * t80 + x81 * t81 + x82 * t82 + x83 * t83 + x84 * t84 + x85 * t85 + x86 * t86 + x87 * t87 
+#Constraint 6: 	Total time must be less than M
+model.addConstr(x01 * t01 + x02 * t02 + x03 * t03 + x04 * t04 + x05 * t05 + x06 * t06 + x07 * t07 + x08 * t08
+	+ x09 * t09 + x10 * t10 + x12 * t12 + x13 * t13 + x14 * t14 + x15 * t15 + x16 * t16 + x17 * t17 + x18 * t18
+	+ x19 * t19 + x20 * t20 + x21 * t21 + x23 * t23 + x24 * t24 + x25 * t25 + x26 * t26 + x27 * t27 + x28 * t28
+	+ x29 * t29 + x30 * t30 + x31 * t31 + x32 * t32 + x34 * t34 + x35 * t35 + x36 * t36 + x37 * t37 + x38 * t38
+	+ x39 * t39 + x40 * t40 + x41 * t41 + x42 * t42 + x43 * t43 + x45 * t45 + x46 * t46 + x47 * t47 + x48 * t48
+	+ x49 * t49 + x50 * t50 + x51 * t51 + x52 * t52 + x53 * t53 + x54 * t54 + x56 * t56 + x57 * t57 + x58 * t58
+	+ x59 * t59 + x60 * t60 + x61 * t61 + x62 * t62 + x63 * t63 + x64 * t64 + x65 * t65 + x67 * t67 + x68 * t68
+	+ x69 * t69 + x70 * t70 + x71 * t71 + x72 * t72 + x73 * t73 + x74 * t74 + x75 * t75 + x76 * t76 + x78 * t78
+	+ x79 * t79 + x80 * t80 + x81 * t81 + x82 * t82 + x83 * t83 + x84 * t84 + x85 * t85 + x86 * t86 + x87 * t87
 	+ x89 * t89 + x90 * t90 + x91 * t91 + x92 * t92 + x93 * t93 + x94 * t94 + x95 * t95 + x96 * t96 + x97 * t97 + x98 * t98 <= m)
 
 
@@ -369,7 +417,17 @@ print('')
 print('')
 
 
+xij = [x01, x02, x03, x04, x05, x06, x07, x08, x09, x10, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x23, x24,
+x25, x26, x27, x28, x29, x30, x31, x32, x34, x35, x36, x37, x38, x39, x40, x41, x42, x43, x45, x46, x47, x48, x49, x50,
+x51, x52, x53, x54, x56, x57, x58, x59, x60, x61, x62, x63, x64, x65, x67, x68, x69, x70, x71, x72, x73, x74, x75, x76,
+x78, x79, x80, x81, x82, x83, x84, x85, x86, x87, x89, x90, x91, x92, x93, x94, x95, x96, x97, x98]
+
+
 
 for i,j in enumerate(xij_list):
 	if j.x == 1:
+
 		print((i, j.VarName))
+
+		print((i, j.x))
+
