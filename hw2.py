@@ -126,6 +126,10 @@ x_list = [
 		[x90, x91, x92, x93, x94, x95, x96, x97, x98]
 		]
 
+xij_list = [x01, x02, x03, x04, x05, x06, x07, x08, x09, x10, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x23, x24, 
+x25, x26, x27, x28, x29, x30, x31, x32, x34, x35, x36, x37, x38, x39, x40, x41, x42, x43, x45, x46, x47, x48, x49, x50, 
+x51, x52, x53, x54, x56, x57, x58, x59, x60, x61, x62, x63, x64, x65, x67, x68, x69, x70, x71, x72, x73, x74, x75, x76,
+x78, x79, x80, x81, x82, x83, x84, x85, x86, x87, x89, x90, x91, x92, x93, x94, x95, x96, x97, x98]
 
 #Yi - whether or not we visit location i
 y0 = 1
@@ -271,9 +275,7 @@ for i in range(9):
 	for j in range(9):
 		if i == j:
 			continue
-			# result.append(x_list[i][j+1] * y)
 		else:
-			# print((i,j))
 			result.append(x_list[i][j] * y)
 			index_list.append((i, j))
 
@@ -297,39 +299,42 @@ for i in range(9):
 	model.addConstr(sum(result) <= 1)
 	model.addConstr(sum(result) >= 0)
 
+for xij in xij_list:
+	model.addConstr(xij <= 1)
+	model.addConstr(xij >= 0)
 
-model.addConstr(sum([x01 , x02 , x03 , x04 , x05 , x06 , x07 , x08 , x09]) >= y0)
-model.addConstr(sum([x10 , x12 , x13 , x14 , x15 , x16 , x17 , x18 , x19]) >= y1)
-model.addConstr(sum([x20 , x21 , x23 , x24 , x25 , x26 , x27 , x28 , x29]) >= y2)
-model.addConstr(sum([x30 , x31 , x32 , x34 , x35 , x36 , x37 , x38 , x39]) >= y3)
-model.addConstr(sum([x40 , x41 , x42 , x43 , x45 , x46 , x47 , x48 , x49]) >= y4)
-model.addConstr(sum([x50 , x51 , x52 , x53 , x54 , x56 , x57 , x58 , x59]) >= y5)
-model.addConstr(sum([x60 , x61 , x62 , x63 , x64 , x65 , x67 , x68 , x69]) >= y6)
-model.addConstr(sum([x70 , x71 , x72 , x73 , x74 , x75 , x76 , x78 , x79]) >= y7)
-model.addConstr(sum([x80 , x81 , x82 , x83 , x84 , x85 , x86 , x87 , x89]) >= y8)
-model.addConstr(sum([x90 , x91 , x92 , x93 , x94 , x95 , x96 , x97 , x98]) >= y9)
+model.addConstr(sum([x01, x02, x03, x04, x05, x06, x07, x08, x09]) >= y0)
+model.addConstr(sum([x10, x12, x13, x14, x15, x16, x17, x18, x19]) >= y1)
+model.addConstr(sum([x20, x21, x23, x24, x25, x26, x27, x28, x29]) >= y2)
+model.addConstr(sum([x30, x31, x32, x34, x35, x36, x37, x38, x39]) >= y3)
+model.addConstr(sum([x40, x41, x42, x43, x45, x46, x47, x48, x49]) >= y4)
+model.addConstr(sum([x50, x51, x52, x53, x54, x56, x57, x58, x59]) >= y5)
+model.addConstr(sum([x60, x61, x62, x63, x64, x65, x67, x68, x69]) >= y6)
+model.addConstr(sum([x70, x71, x72, x73, x74, x75, x76, x78, x79]) >= y7)
+model.addConstr(sum([x80, x81, x82, x83, x84, x85, x86, x87, x89]) >= y8)
+model.addConstr(sum([x90, x91, x92, x93, x94, x95, x96, x97, x98]) >= y9)
 
-model.addConstr(sum([x10 , x20 , x30 , x40 , x50 , x60 , x70 , x80 , x90]) >= y0)
-model.addConstr(sum([x01 , x21 , x31 , x41 , x51 , x61 , x71 , x81 , x91]) >= y1)
-model.addConstr(sum([x02 , x12 , x32 , x42 , x52 , x62 , x72 , x82 , x92]) >= y2)
-model.addConstr(sum([x03 , x13 , x23 , x43 , x53 , x63 , x73 , x83 , x93]) >= y3)
-model.addConstr(sum([x04 , x14 , x24 , x34 , x54 , x64 , x74 , x84 , x94]) >= y4)
-model.addConstr(sum([x05 , x15 , x25 , x35 , x45 , x65 , x75 , x85 , x95]) >= y5)
-model.addConstr(sum([x06 , x16 , x26 , x36 , x46 , x56 , x76 , x86 , x96]) >= y6)
-model.addConstr(sum([x07 , x17 , x27 , x37 , x47 , x57 , x67 , x87 , x97]) >= y7)
-model.addConstr(sum([x08 , x18 , x28 , x38 , x48 , x58 , x68 , x78 , x98]) >= y8)
-model.addConstr(sum([x09 , x19 , x29 , x39 , x49 , x59 , x69 , x79 , x89]) >= y9)
+model.addConstr(sum([x10, x20, x30, x40, x50, x60, x70, x80, x90]) >= y0)
+model.addConstr(sum([x01, x21, x31, x41, x51, x61, x71, x81, x91]) >= y1)
+model.addConstr(sum([x02, x12, x32, x42, x52, x62, x72, x82, x92]) >= y2)
+model.addConstr(sum([x03, x13, x23, x43, x53, x63, x73, x83, x93]) >= y3)
+model.addConstr(sum([x04, x14, x24, x34, x54, x64, x74, x84, x94]) >= y4)
+model.addConstr(sum([x05, x15, x25, x35, x45, x65, x75, x85, x95]) >= y5)
+model.addConstr(sum([x06, x16, x26, x36, x46, x56, x76, x86, x96]) >= y6)
+model.addConstr(sum([x07, x17, x27, x37, x47, x57, x67, x87, x97]) >= y7)
+model.addConstr(sum([x08, x18, x28, x38, x48, x58, x68, x78, x98]) >= y8)
+model.addConstr(sum([x09, x19, x29, x39, x49, x59, x69, x79, x89]) >= y9)
 
-model.addConstr(sum([x10 , x20 , x30 , x40 , x50 , x60 , x70 , x80 , x90]) <= y0)
-model.addConstr(sum([x01 , x21 , x31 , x41 , x51 , x61 , x71 , x81 , x91]) <= y1)
-model.addConstr(sum([x02 , x12 , x32 , x42 , x52 , x62 , x72 , x82 , x92]) <= y2)
-model.addConstr(sum([x03 , x13 , x23 , x43 , x53 , x63 , x73 , x83 , x93]) <= y3)
-model.addConstr(sum([x04 , x14 , x24 , x34 , x54 , x64 , x74 , x84 , x94]) <= y4)
-model.addConstr(sum([x05 , x15 , x25 , x35 , x45 , x65 , x75 , x85 , x95]) <= y5)
-model.addConstr(sum([x06 , x16 , x26 , x36 , x46 , x56 , x76 , x86 , x96]) <= y6)
-model.addConstr(sum([x07 , x17 , x27 , x37 , x47 , x57 , x67 , x87 , x97]) <= y7)
-model.addConstr(sum([x08 , x18 , x28 , x38 , x48 , x58 , x68 , x78 , x98]) <= y8)
-model.addConstr(sum([x09 , x19 , x29 , x39 , x49 , x59 , x69 , x79 , x89]) <= y9)
+model.addConstr(sum([x10, x20, x30, x40, x50, x60, x70, x80, x90]) <= y0)
+model.addConstr(sum([x01, x21, x31, x41, x51, x61, x71, x81, x91]) <= y1)
+model.addConstr(sum([x02, x12, x32, x42, x52, x62, x72, x82, x92]) <= y2)
+model.addConstr(sum([x03, x13, x23, x43, x53, x63, x73, x83, x93]) <= y3)
+model.addConstr(sum([x04, x14, x24, x34, x54, x64, x74, x84, x94]) <= y4)
+model.addConstr(sum([x05, x15, x25, x35, x45, x65, x75, x85, x95]) <= y5)
+model.addConstr(sum([x06, x16, x26, x36, x46, x56, x76, x86, x96]) <= y6)
+model.addConstr(sum([x07, x17, x27, x37, x47, x57, x67, x87, x97]) <= y7)
+model.addConstr(sum([x08, x18, x28, x38, x48, x58, x68, x78, x98]) <= y8)
+model.addConstr(sum([x09, x19, x29, x39, x49, x59, x69, x79, x89]) <= y9)
 
 #for leaving starting point
 model.addConstr(sum([x01, x02, x03, x04, x05, x06, x07, x08, x09]) <= 1)
@@ -363,12 +368,8 @@ for i,y in enumerate(y_list):
 print('')
 print('')
 
-xij = [x01, x02, x03, x04, x05, x06, x07, x08, x09, x10, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x23, x24, 
-x25, x26, x27, x28, x29, x30, x31, x32, x34, x35, x36, x37, x38, x39, x40, x41, x42, x43, x45, x46, x47, x48, x49, x50, 
-x51, x52, x53, x54, x56, x57, x58, x59, x60, x61, x62, x63, x64, x65, x67, x68, x69, x70, x71, x72, x73, x74, x75, x76,
-x78, x79, x80, x81, x82, x83, x84, x85, x86, x87, x89, x90, x91, x92, x93, x94, x95, x96, x97, x98]
 
 
-for i,j in enumerate(xij):
+for i,j in enumerate(xij_list):
 	if j.x == 1:
 		print((i, j.VarName))
