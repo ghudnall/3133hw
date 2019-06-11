@@ -357,7 +357,8 @@ model.setObjective(sum([p1*y1, p2*y2, p3*y3, p3*y4, p5*y5, p6*y6, p7*y7, p8*y8, 
 model.optimize()
 
 for i,y in enumerate(y_list):
-	print((i+1, y.x))
+	if y.x == 1:
+		print((i+1, y.x))
 
 print('')
 print('')
@@ -370,4 +371,4 @@ x78, x79, x80, x81, x82, x83, x84, x85, x86, x87, x89, x90, x91, x92, x93, x94, 
 
 for i,j in enumerate(xij):
 	if j.x == 1:
-		print((i, j.x))
+		print((i, j.VarName))
