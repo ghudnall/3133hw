@@ -1819,3 +1819,111 @@ Solution count 2: 26 25
 
 Optimal solution found (tolerance 1.00e-04)
 Best objective 2.600000000000e+01, best bound 2.600000000000e+01, gap 0.0000%
+
+Gurobi 8.1.0 (mac64, Python) logging started Tue Jun 11 10:48:26 2019
+
+Academic license - for non-commercial use only
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Optimize a model with 36 rows, 99 columns and 432 nonzeros
+Model has 36 quadratic constraints
+Variable types: 0 continuous, 99 integer (99 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+02]
+  QMatrix range    [1e+00, 1e+00]
+  Objective range  [2e+00, 9e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+02]
+  QRHS range       [1e+00, 1e+00]
+Presolve removed 14 rows and 8 columns
+Presolve time: 0.00s
+Presolved: 22 rows, 91 columns, 271 nonzeros
+Variable types: 0 continuous, 91 integer (91 binary)
+
+Root relaxation: objective 2.601683e+01, 29 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   26.01683    0    9          -   26.01683      -     -    0s
+H    0     0                      26.0000000   26.01683  0.06%     -    0s
+
+Explored 1 nodes (29 simplex iterations) in 0.01 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 1: 26 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.600000000000e+01, best bound 2.600000000000e+01, gap 0.0000%
+
+Gurobi 8.1.0 (mac64, Python) logging started Tue Jun 11 10:57:19 2019
+
+Academic license - for non-commercial use only
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Optimize a model with 46 rows, 99 columns and 531 nonzeros
+Model has 36 quadratic constraints
+Variable types: 0 continuous, 99 integer (99 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+02]
+  QMatrix range    [1e+00, 1e+00]
+  Objective range  [2e+00, 9e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+02]
+  QRHS range       [1e+00, 1e+00]
+Presolve removed 26 rows and 26 columns
+Presolve time: 0.00s
+Presolved: 20 rows, 73 columns, 218 nonzeros
+Variable types: 0 continuous, 73 integer (73 binary)
+
+Root relaxation: objective 2.601536e+01, 28 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   26.01286    0   13          -   26.01286      -     -    0s
+H    0     0                      26.0000000   26.01286  0.05%     -    0s
+
+Explored 1 nodes (32 simplex iterations) in 0.01 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 1: 26 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.600000000000e+01, best bound 2.600000000000e+01, gap 0.0000%
+
+Gurobi 8.1.0 (mac64, Python) logging started Tue Jun 11 10:57:24 2019
+
+Academic license - for non-commercial use only
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Optimize a model with 46 rows, 99 columns and 531 nonzeros
+Model has 36 quadratic constraints
+Variable types: 0 continuous, 99 integer (99 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+02]
+  QMatrix range    [1e+00, 1e+00]
+  Objective range  [2e+00, 9e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+02]
+  QRHS range       [1e+00, 1e+00]
+Presolve removed 26 rows and 26 columns
+Presolve time: 0.00s
+Presolved: 20 rows, 73 columns, 218 nonzeros
+Variable types: 0 continuous, 73 integer (73 binary)
+
+Root relaxation: objective 2.601536e+01, 28 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   26.01286    0   13          -   26.01286      -     -    0s
+H    0     0                      26.0000000   26.01286  0.05%     -    0s
+
+Explored 1 nodes (32 simplex iterations) in 0.01 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 1: 26 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.600000000000e+01, best bound 2.600000000000e+01, gap 0.0000%
