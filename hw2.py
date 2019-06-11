@@ -301,9 +301,14 @@ for i in range(9):
 	model.addConstr(sum(result) <= 1)
 	model.addConstr(sum(result) >= 0)
 
-for xij in xij_list:
-	model.addConstr(xij <= 1)
-	model.addConstr(xij >= 0)
+for i in range(9):
+	for j in range(9):
+		if i == j:
+			continue
+		else:
+			xij = x_list[i][j]
+			xji = x_list[j][i]
+			model.addConstr(xij + xji <= 1)
 
 model.addConstr(sum([x01, x02, x03, x04, x05, x06, x07, x08, x09]) >= y0)
 model.addConstr(sum([x10, x12, x13, x14, x15, x16, x17, x18, x19]) >= y1)
@@ -405,7 +410,6 @@ model.addConstr(x01 * t01 + x02 * t02 + x03 * t03 + x04 * t04 + x05 * t05 + x06 
 	+ x79 * t79 + x80 * t80 + x81 * t81 + x82 * t82 + x83 * t83 + x84 * t84 + x85 * t85 + x86 * t86 + x87 * t87
 	+ x89 * t89 + x90 * t90 + x91 * t91 + x92 * t92 + x93 * t93 + x94 * t94 + x95 * t95 + x96 * t96 + x97 * t97 + x98 * t98 <= m)
 
-
 model.setObjective(sum([p1*y1, p2*y2, p3*y3, p3*y4, p5*y5, p6*y6, p7*y7, p8*y8, p9*y9]), GRB.MAXIMIZE)
 model.optimize()
 
@@ -416,18 +420,8 @@ for i,y in enumerate(y_list):
 print('')
 print('')
 
-
-xij = [x01, x02, x03, x04, x05, x06, x07, x08, x09, x10, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x23, x24,
-x25, x26, x27, x28, x29, x30, x31, x32, x34, x35, x36, x37, x38, x39, x40, x41, x42, x43, x45, x46, x47, x48, x49, x50,
-x51, x52, x53, x54, x56, x57, x58, x59, x60, x61, x62, x63, x64, x65, x67, x68, x69, x70, x71, x72, x73, x74, x75, x76,
-x78, x79, x80, x81, x82, x83, x84, x85, x86, x87, x89, x90, x91, x92, x93, x94, x95, x96, x97, x98]
-
-
-
 for i,j in enumerate(xij_list):
 	if j.x == 1:
-
 		print((i, j.VarName))
-
-		print((i, j.x))
+		# print((i, j.x))
 
