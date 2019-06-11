@@ -47,9 +47,9 @@ x29 = model.addVar(vtype = GRB.BINARY, name = 'x29')
 x30 = model.addVar(vtype = GRB.BINARY, name = 'x30')
 x31 = model.addVar(vtype = GRB.BINARY, name = 'x31')
 x32 = model.addVar(vtype = GRB.BINARY, name = 'x32')
-x34 = model.addVar(vtype = GRB.BINARY, name = 'x33')
-x35 = model.addVar(vtype = GRB.BINARY, name = 'x34')
-x36 = model.addVar(vtype = GRB.BINARY, name = 'x35')
+x34 = model.addVar(vtype = GRB.BINARY, name = 'x34')
+x35 = model.addVar(vtype = GRB.BINARY, name = 'x35')
+x36 = model.addVar(vtype = GRB.BINARY, name = 'x36')
 x37 = model.addVar(vtype = GRB.BINARY, name = 'x37')
 x38 = model.addVar(vtype = GRB.BINARY, name = 'x38')
 x39 = model.addVar(vtype = GRB.BINARY, name = 'x39')
@@ -127,6 +127,8 @@ y7 = model.addVar(vtype = GRB.BINARY, name = 'y7')
 y8 = model.addVar(vtype = GRB.BINARY, name = 'y8')
 y9 = model.addVar(vtype = GRB.BINARY, name = 'y9')
 y_list = [y1, y2, y3, y4, y5, y6, y7, y8, y9]
+
+hartleyarray = [ [ model.addVar(vtype = GRB.BINARY, name = 'x{}{}'.format(i, j)) for i in range(10) ] for j in range(10) ]
 
 t01 = 21.189620100417
 t10 = 21.189620100417
@@ -252,28 +254,48 @@ k_list = [k1, k2, k3, k4, k5, k6, k7, k8, k9]
 
 model.addConstr(sum([k1*y1 + k2*y2 + k3*y3 + k4*y4 + k5*y5 + k6*y6 + k7*y7 + k8*y8 + k9*y9]) <= c)
 
-#must enter each location no more than once, no less than 0
-model.addConstr(sum([x10*y1 + x12*y1 + x13*y1 + x14*y1 + x15*y1 + x16*y1 + x17*y1 + x18*y1 + x19*y1]) <= 1)
-model.addConstr(sum([x20*y2 + x21*y2 + x23*y1 + x24*y1 + x25*y1 + x26*y1 + x27*y1 + x28*y1 + x29*y1]) <= 1)
-model.addConstr(sum([x30*y3 + x31*y3 + x32*y3 + x34*y3 + x35*y3 + x36*y3 + x37*y3 + x38*y3 + x39*y3]) <= 1)
-model.addConstr(sum([x40*y4 + x41*y4 + x42*y4 + x43*y4 + x45*y4 + x46*y4 + x47*y4 + x48*y4 + x49*y4]) <= 1)
-model.addConstr(sum([x50*y5 + x51*y5 + x52*y5 + x53*y5 + x54*y5 + x56*y5 + x57*y5 + x58*y5 + x59*y5]) <= 1)
-model.addConstr(sum([x60*y6 + x61*y6 + x62*y6 + x63*y6 + x64*y6 + x65*y6 + x67*y6 + x68*y6 + x69*y6]) <= 1)
-model.addConstr(sum([x70*y7 + x71*y7 + x72*y7 + x73*y7 + x74*y7 + x75*y7 + x76*y7 + x78*y7 + x79*y7]) <= 1)
-model.addConstr(sum([x80*y8 + x81*y8 + x82*y8 + x83*y8 + x84*y8 + x85*y8 + x86*y8 + x87*y8 + x89*y8]) <= 1)
-model.addConstr(sum([x90*y9 + x91*y9 + x92*y9 + x93*y9 + x94*y9 + x95*y9 + x96*y9 + x97*y9 + x98*y9]) <= 1)
-
-model.addConstr(sum([x10*y1 + x12*y1 + x13*y1 + x14*y1 + x15*y1 + x16*y1 + x17*y1 + x18*y1 + x19*y1]) >= 0)
-model.addConstr(sum([x20*y2 + x21*y2 + x23*y1 + x24*y1 + x25*y1 + x26*y1 + x27*y1 + x28*y1 + x29*y1]) >= 0)
-model.addConstr(sum([x30*y3 + x31*y3 + x32*y3 + x34*y3 + x35*y3 + x36*y3 + x37*y3 + x38*y3 + x39*y3]) >= 0)
-model.addConstr(sum([x40*y4 + x41*y4 + x42*y4 + x43*y4 + x45*y4 + x46*y4 + x47*y4 + x48*y4 + x49*y4]) >= 0)
-model.addConstr(sum([x50*y5 + x51*y5 + x52*y5 + x53*y5 + x54*y5 + x56*y5 + x57*y5 + x58*y5 + x59*y5]) >= 0)
-model.addConstr(sum([x60*y6 + x61*y6 + x62*y6 + x63*y6 + x64*y6 + x65*y6 + x67*y6 + x68*y6 + x69*y6]) >= 0)
-model.addConstr(sum([x70*y7 + x71*y7 + x72*y7 + x73*y7 + x74*y7 + x75*y7 + x76*y7 + x78*y7 + x79*y7]) >= 0)
-model.addConstr(sum([x80*y8 + x81*y8 + x82*y8 + x83*y8 + x84*y8 + x85*y8 + x86*y8 + x87*y8 + x89*y8]) >= 0)
-model.addConstr(sum([x90*y9 + x91*y9 + x92*y9 + x93*y9 + x94*y9 + x95*y9 + x96*y9 + x97*y9 + x98*y9]) >= 0)
-
 #must leave each location no more than once, no less than 0
+# model.addConstr(sum([x10*y1 + x12*y1 + x13*y1 + x14*y1 + x15*y1 + x16*y1 + x17*y1 + x18*y1 + x19*y1]) <= 1)
+# model.addConstr(sum([x20*y2 + x21*y2 + x23*y2 + x24*y2 + x25*y2 + x26*y2 + x27*y2 + x28*y2 + x29*y2]) <= 1)
+# model.addConstr(sum([x30*y3 + x31*y3 + x32*y3 + x34*y3 + x35*y3 + x36*y3 + x37*y3 + x38*y3 + x39*y3]) <= 1)
+# model.addConstr(sum([x40*y4 + x41*y4 + x42*y4 + x43*y4 + x45*y4 + x46*y4 + x47*y4 + x48*y4 + x49*y4]) <= 1)
+# model.addConstr(sum([x50*y5 + x51*y5 + x52*y5 + x53*y5 + x54*y5 + x56*y5 + x57*y5 + x58*y5 + x59*y5]) <= 1)
+# model.addConstr(sum([x60*y6 + x61*y6 + x62*y6 + x63*y6 + x64*y6 + x65*y6 + x67*y6 + x68*y6 + x69*y6]) <= 1)
+# model.addConstr(sum([x70*y7 + x71*y7 + x72*y7 + x73*y7 + x74*y7 + x75*y7 + x76*y7 + x78*y7 + x79*y7]) <= 1)
+# model.addConstr(sum([x80*y8 + x81*y8 + x82*y8 + x83*y8 + x84*y8 + x85*y8 + x86*y8 + x87*y8 + x89*y8]) <= 1)
+# model.addConstr(sum([x90*y9 + x91*y9 + x92*y9 + x93*y9 + x94*y9 + x95*y9 + x96*y9 + x97*y9 + x98*y9]) <= 1)
+
+# model.addConstr(sum([x10*y1 + x12*y1 + x13*y1 + x14*y1 + x15*y1 + x16*y1 + x17*y1 + x18*y1 + x19*y1]) >= 0)
+# model.addConstr(sum([x20*y2 + x21*y2 + x23*y2 + x24*y2 + x25*y2 + x26*y2 + x27*y2 + x28*y2 + x29*y2]) >= 0)
+# model.addConstr(sum([x30*y3 + x31*y3 + x32*y3 + x34*y3 + x35*y3 + x36*y3 + x37*y3 + x38*y3 + x39*y3]) >= 0)
+# model.addConstr(sum([x40*y4 + x41*y4 + x42*y4 + x43*y4 + x45*y4 + x46*y4 + x47*y4 + x48*y4 + x49*y4]) >= 0)
+# model.addConstr(sum([x50*y5 + x51*y5 + x52*y5 + x53*y5 + x54*y5 + x56*y5 + x57*y5 + x58*y5 + x59*y5]) >= 0)
+# model.addConstr(sum([x60*y6 + x61*y6 + x62*y6 + x63*y6 + x64*y6 + x65*y6 + x67*y6 + x68*y6 + x69*y6]) >= 0)
+# model.addConstr(sum([x70*y7 + x71*y7 + x72*y7 + x73*y7 + x74*y7 + x75*y7 + x76*y7 + x78*y7 + x79*y7]) >= 0)
+# model.addConstr(sum([x80*y8 + x81*y8 + x82*y8 + x83*y8 + x84*y8 + x85*y8 + x86*y8 + x87*y8 + x89*y8]) >= 0)
+# model.addConstr(sum([x90*y9 + x91*y9 + x92*y9 + x93*y9 + x94*y9 + x95*y9 + x96*y9 + x97*y9 + x98*y9]) >= 0)
+
+model.addConstr(sum([x10*y0 + x12*y2 + x13*y3 + x14*y4 + x15*y5 + x16*y6 + x17*y7 + x18*y8 + x19*y9]) <= 1)
+model.addConstr(sum([x20*y0 + x21*y1 + x23*y3 + x24*y4 + x25*y5 + x26*y6 + x27*y7 + x28*y8 + x29*y9]) <= 1)
+model.addConstr(sum([x30*y0 + x31*y1 + x32*y2 + x34*y4 + x35*y5 + x36*y6 + x37*y7 + x38*y8 + x39*y9]) <= 1)
+model.addConstr(sum([x40*y0 + x41*y1 + x42*y2 + x43*y3 + x45*y5 + x46*y6 + x47*y7 + x48*y8 + x49*y9]) <= 1)
+model.addConstr(sum([x50*y0 + x51*y1 + x52*y2 + x53*y3 + x54*y4 + x56*y6 + x57*y7 + x58*y8 + x59*y9]) <= 1)
+model.addConstr(sum([x60*y0 + x61*y1 + x62*y2 + x63*y3 + x64*y4 + x65*y5 + x67*y7 + x68*y8 + x69*y9]) <= 1)
+model.addConstr(sum([x70*y0 + x71*y1 + x72*y2 + x73*y3 + x74*y4 + x75*y5 + x76*y6 + x78*y8 + x79*y9]) <= 1)
+model.addConstr(sum([x80*y0 + x81*y1 + x82*y2 + x83*y3 + x84*y4 + x85*y5 + x86*y6 + x87*y7 + x89*y9]) <= 1)
+model.addConstr(sum([x90*y0 + x91*y1 + x92*y2 + x93*y3 + x94*y4 + x95*y5 + x96*y6 + x97*y7 + x98*y8]) <= 1)
+
+model.addConstr(sum([x10*y0 + x12*y2 + x13*y3 + x14*y4 + x15*y5 + x16*y6 + x17*y7 + x18*y8 + x19*y9]) >= 0)
+model.addConstr(sum([x20*y0 + x21*y1 + x23*y3 + x24*y4 + x25*y5 + x26*y6 + x27*y7 + x28*y8 + x29*y9]) >= 0)
+model.addConstr(sum([x30*y0 + x31*y1 + x32*y2 + x34*y4 + x35*y5 + x36*y6 + x37*y7 + x38*y8 + x39*y9]) >= 0)
+model.addConstr(sum([x40*y0 + x41*y1 + x42*y2 + x43*y3 + x45*y5 + x46*y6 + x47*y7 + x48*y8 + x49*y9]) >= 0)
+model.addConstr(sum([x50*y0 + x51*y1 + x52*y2 + x53*y3 + x54*y4 + x56*y6 + x57*y7 + x58*y8 + x59*y9]) >= 0)
+model.addConstr(sum([x60*y0 + x61*y1 + x62*y2 + x63*y3 + x64*y4 + x65*y5 + x67*y7 + x68*y8 + x69*y9]) >= 0)
+model.addConstr(sum([x70*y0 + x71*y1 + x72*y2 + x73*y3 + x74*y4 + x75*y5 + x76*y6 + x78*y8 + x79*y9]) >= 0)
+model.addConstr(sum([x80*y0 + x81*y1 + x82*y2 + x83*y3 + x84*y4 + x85*y5 + x86*y6 + x87*y7 + x89*y9]) >= 0)
+model.addConstr(sum([x90*y0 + x91*y1 + x92*y2 + x93*y3 + x94*y4 + x95*y5 + x96*y6 + x97*y7 + x98*y8]) >= 0)
+
+#must enter each location no more than once, no less than 0
 model.addConstr(sum([x01*y1 + x21*y1 + x31*y1 + x41*y1 + x51*y1 + x61*y1 + x71*y1 + x81*y1 + x91*y1]) <= 1)
 model.addConstr(sum([x02*y2 + x12*y2 + x32*y2 + x42*y2 + x52*y2 + x62*y2 + x72*y2 + x82*y2 + x92*y2]) <= 1)
 model.addConstr(sum([x03*y3 + x13*y3 + x23*y3 + x43*y3 + x53*y3 + x63*y3 + x73*y3 + x83*y3 + x93*y3]) <= 1)
@@ -304,45 +326,17 @@ model.addConstr(sum([x10*y0 + x20*y0 + x30*y0 + x40*y0 + x50*y0 + x60*y0 + x70*y
 
 ############
 
-model.addConstr(x10*t10 + x12*t12 + x13*t13 + x14*t14 + x15*t15 + x16*t16 + x17*t17 + x18*t18 + x19*t19 +
-x20*t20 + x21*t21 + x23*t13 + x24*t24 + x25*t25 + x26*t16 + x27*t17 + x28*t28 + x29*t19 +
-x30*t30 + x31*t31 + x32*t32 + x34*t34 + x35*t35 + x36*t36 + x37*t37 + x38*t38 + x39*t39 +
-x40*t40 + x41*t41 + x42*t42 + x43*t43 + x45*t45 + x46*t46 + x47*t47 + x48*t48 + x49*t49 +
-x50*t50 + x51*t51 + x52*t52 + x53*t53 + x54*t54 + x56*t56 + x57*t57 + x58*t58 + x59*t59 +
-x60*t60 + x61*t61 + x62*t62 + x63*t63 + x64*t64 + x65*t65 + x67*t67 + x68*t68 + x69*t69 +
-x70*t70 + x71*t71 + x72*t72 + x73*t73 + x74*t74 + x75*t75 + x76*t76 + x78*t78 + x79*t79 +
-x80*t80 + x81*t81 + x82*t82 + x83*t83 + x84*t84 + x85*t85 + x86*t86 + x87*t87 + x89*t89 +
-x90*t90 + x91*t91 + x92*t92 + x93*t93 + x94*t94 + x95*t95 + x96*t96 + x97*t97 + x98*t98 +
+model.addConstr(x01 * t01 + x02 * t02 + x03 * t03 + x04 * t04 + x05 * t05 + x06 * t06 + x07 * t07 + x08 * t08 
+	+ x09 * t09 + x10 * t10 + x12 * t12 + x13 * t13 + x14 * t14 + x15 * t15 + x16 * t16 + x17 * t17 + x18 * t18 
+	+ x19 * t19 + x20 * t20 + x21 * t21 + x23 * t23 + x24 * t24 + x25 * t25 + x26 * t26 + x27 * t27 + x28 * t28 
+	+ x29 * t29 + x30 * t30 + x31 * t31 + x32 * t32 + x34 * t34 + x35 * t35 + x36 * t36 + x37 * t37 + x38 * t38 
+	+ x39 * t39 + x40 * t40 + x41 * t41 + x42 * t42 + x43 * t43 + x45 * t45 + x46 * t46 + x47 * t47 + x48 * t48 
+	+ x49 * t49 + x50 * t50 + x51 * t51 + x52 * t52 + x53 * t53 + x54 * t54 + x56 * t56 + x57 * t57 + x58 * t58 
+	+ x59 * t59 + x60 * t60 + x61 * t61 + x62 * t62 + x63 * t63 + x64 * t64 + x65 * t65 + x67 * t67 + x68 * t68 
+	+ x69 * t69 + x70 * t70 + x71 * t71 + x72 * t72 + x73 * t73 + x74 * t74 + x75 * t75 + x76 * t76 + x78 * t78 
+	+ x79 * t79 + x80 * t80 + x81 * t81 + x82 * t82 + x83 * t83 + x84 * t84 + x85 * t85 + x86 * t86 + x87 * t87 
+	+ x89 * t89 + x90 * t90 + x91 * t91 + x92 * t92 + x93 * t93 + x94 * t94 + x95 * t95 + x96 * t96 + x97 * t97 + x98 * t98 <= m)
 
-x10*t10 + x12*t12 + x13*t13 + x14*t14 + x15*t15 + x16*t16 + x17*t17 + x18*t18 + x19*t19 +
-x20*t20 + x21*t21 + x23*t13 + x24*t14 + x25*t15 + x26*t16 + x27*t17 + x28*t18 + x29*t19 +
-x30*t30 + x31*t31 + x32*t32 + x34*t34 + x35*t35 + x36*t36 + x37*t37 + x38*t38 + x39*t39 +
-x40*t40 + x41*t41 + x42*t43 + x43*t43 + x45*t45 + x46*t46 + x47*t47 + x48*t48 + x49*t49 +
-x50*t50 + x51*t51 + x52*t52 + x53*t53 + x54*t54 + x56*t56 + x57*t57 + x58*t58 + x59*t59 +
-x60*t60 + x61*t61 + x62*t62 + x63*t63 + x64*t64 + x65*t65 + x67*t67 + x68*t68 + x69*t69 +
-x70*t70 + x71*t71 + x72*t72 + x73*t73 + x74*t74 + x75*t75 + x76*t76 + x78*t78 + x79*t79 +
-x80*t80 + x81*t81 + x82*t82 + x83*t83 + x84*t84 + x85*t85 + x86*t86 + x87*t87 + x89*t89 +
-x90*t90 + x91*t91 + x92*t92 + x93*t93 + x94*t94 + x95*t95 + x96*t96 + x97*t97 + x98*t98 +
-
-x01*t01 + x21*t21 + x31*t31 + x41*t41 + x51*t51 + x61*t61 + x71*t71 + x81*t81 + x91*t91 +
-x02*t02 + x12*t12 + x32*t32 + x42*t42 + x52*t52 + x62*t62 + x72*t72 + x82*t82 + x92*t92 +
-x03*t03 + x13*t13 + x23*t23 + x43*t43 + x53*t53 + x63*t63 + x73*t73 + x83*t83 + x93*t93 +
-x04*t04 + x14*t14 + x24*t24 + x34*t34 + x54*t54 + x64*t64 + x74*t74 + x84*t84 + x94*t94 +
-x05*t05 + x15*t15 + x25*t25 + x35*t35 + x45*t45 + x65*t65 + x75*t75 + x85*t85 + x95*t95 +
-x06*t06 + x16*t16 + x26*t26 + x36*t36 + x46*t46 + x56*t56 + x76*t76 + x86*t86 + x96*t96 +
-x07*t07 + x17*t17 + x27*t27 + x37*t37 + x47*t47 + x57*t57 + x67*t67 + x87*t87 + x97*t97 +
-x08*t08 + x18*t18 + x28*t28 + x38*t38 + x48*t48 + x58*t58 + x68*t68 + x78*t78 + x98*t98 +
-x09*t09 + x19*t19 + x29*t29 + x39*t39 + x49*t49 + x59*t59 + x69*t69 + x79*t79 + x89*t89 +
-
-x01*t01 + x21*t21 + x31*t31 + x41*t41 + x51*t51 + x61*t61 + x71*t71 + x81*t81 + x91*t91 +
-x02*t02 + x12*t12 + x32*t32 + x42*t42 + x52*t52 + x62*t62 + x72*t72 + x82*t82 + x92*t92 +
-x03*t03 + x13*t13 + x23*t23 + x43*t43 + x53*t53 + x63*t63 + x73*t73 + x83*t83 + x93*t93 +
-x04*t04 + x14*t14 + x24*t24 + x34*t34 + x54*t54 + x64*t64 + x74*t74 + x84*t84 + x94*t94 +
-x05*t05 + x15*t15 + x25*t25 + x35*t35 + x45*t45 + x65*t65 + x75*t75 + x85*t85 + x95*t95 +
-x06*t06 + x16*t16 + x26*t26 + x36*t36 + x46*t46 + x56*t56 + x76*t76 + x86*t86 + x96*t96 +
-x07*t07 + x17*t17 + x27*t27 + x37*t37 + x47*t47 + x57*t57 + x67*t67 + x87*t87 + x97*t97 +
-x08*t08 + x18*t18 + x28*t28 + x38*t38 + x48*t48 + x58*t58 + x68*t68 + x78*t78 + x98*t98 +
-x09*t09 + x19*t19 + x29*t29 + x39*t39 + x49*t49 + x59*t59 + x69*t69 + x79*t79 + x89*t89 <= m)
 
 model.setObjective(sum([p1*y1, p2*y2, p3*y3, p3*y4, p5*y5, p6*y6, p7*y7, p8*y8, p9*y9]), GRB.MAXIMIZE)
 model.optimize()
@@ -352,7 +346,10 @@ for i,y in enumerate(y_list):
 print('')
 print('')
 
-xij = [x01, x02, x03, x04, x05, x06, x07, x08, x09, x10, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x23, x24, x25, x26, x27, x28, x29, x30, x31, x32, x34, x35, x36, x37, x38, x39, x40, x41, x42, x43, x45, x46, x47, x48, x49, x50, x51, x52, x53, x54, x56, x57, x58, x59, x60, x61, x62, x63, x64, x65, x67, x68, x69, x70, x71, x72, x73, x74, x75, x76, x78, x79, x80, x81, x82, x83, x84, x85, x86, x87, x89, x90, x91, x92, x93, x94, x95, x96, x97, x98]
+xij = [x01, x02, x03, x04, x05, x06, x07, x08, x09, x10, x12, x13, x14, x15, x16, x17, x18, x19, x20, x21, x23, x24, 
+x25, x26, x27, x28, x29, x30, x31, x32, x34, x35, x36, x37, x38, x39, x40, x41, x42, x43, x45, x46, x47, x48, x49, x50, 
+x51, x52, x53, x54, x56, x57, x58, x59, x60, x61, x62, x63, x64, x65, x67, x68, x69, x70, x71, x72, x73, x74, x75, x76,
+x78, x79, x80, x81, x82, x83, x84, x85, x86, x87, x89, x90, x91, x92, x93, x94, x95, x96, x97, x98]
 
 for i,j in enumerate(xij):
 	if j.x == 1:
