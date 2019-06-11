@@ -14,117 +14,118 @@ model.setParam('OutputFlag', True)
 
 
 #Xij
-x01 = m.addVar(vtype = GRB.BINARY, name = 'x01')
-x02 = m.addVar(vtype = GRB.BINARY, name = 'x02')
-x03 = m.addVar(vtype = GRB.BINARY, name = 'x03')
-x04 = m.addVar(vtype = GRB.BINARY, name = 'x04')
-x05 = m.addVar(vtype = GRB.BINARY, name = 'x05')
-x06 = m.addVar(vtype = GRB.BINARY, name = 'x06')
-x07 = m.addVar(vtype = GRB.BINARY, name = 'x07')
-x08 = m.addVar(vtype = GRB.BINARY, name = 'x08')
-x09 = m.addVar(vtype = GRB.BINARY, name = 'x09')
+x01 = model.addVar(vtype = GRB.BINARY, name = 'x01')
+x02 = model.addVar(vtype = GRB.BINARY, name = 'x02')
+x03 = model.addVar(vtype = GRB.BINARY, name = 'x03')
+x04 = model.addVar(vtype = GRB.BINARY, name = 'x04')
+x05 = model.addVar(vtype = GRB.BINARY, name = 'x05')
+x06 = model.addVar(vtype = GRB.BINARY, name = 'x06')
+x07 = model.addVar(vtype = GRB.BINARY, name = 'x07')
+x08 = model.addVar(vtype = GRB.BINARY, name = 'x08')
+x09 = model.addVar(vtype = GRB.BINARY, name = 'x09')
 
-x10 = m.addVar(vtype = GRB.BINARY, name = 'x10')
-x12 = m.addVar(vtype = GRB.BINARY, name = 'x12')
-x13 = m.addVar(vtype = GRB.BINARY, name = 'x13')
-x14 = m.addVar(vtype = GRB.BINARY, name = 'x14')
-x15 = m.addVar(vtype = GRB.BINARY, name = 'x15')
-x16 = m.addVar(vtype = GRB.BINARY, name = 'x16')
-x17 = m.addVar(vtype = GRB.BINARY, name = 'x17')
-x18 = m.addVar(vtype = GRB.BINARY, name = 'x18')
-x19 = m.addVar(vtype = GRB.BINARY, name = 'x19')
+x10 = model.addVar(vtype = GRB.BINARY, name = 'x10')
+x12 = model.addVar(vtype = GRB.BINARY, name = 'x12')
+x13 = model.addVar(vtype = GRB.BINARY, name = 'x13')
+x14 = model.addVar(vtype = GRB.BINARY, name = 'x14')
+x15 = model.addVar(vtype = GRB.BINARY, name = 'x15')
+x16 = model.addVar(vtype = GRB.BINARY, name = 'x16')
+x17 = model.addVar(vtype = GRB.BINARY, name = 'x17')
+x18 = model.addVar(vtype = GRB.BINARY, name = 'x18')
+x19 = model.addVar(vtype = GRB.BINARY, name = 'x19')
 
-x20 = m.addVar(vtype = GRB.BINARY, name = 'x20')
-x21 = m.addVar(vtype = GRB.BINARY, name = 'x21')
-x23 = m.addVar(vtype = GRB.BINARY, name = 'x23')
-x24 = m.addVar(vtype = GRB.BINARY, name = 'x24')
-x25 = m.addVar(vtype = GRB.BINARY, name = 'x25')
-x26 = m.addVar(vtype = GRB.BINARY, name = 'x26')
-x27 = m.addVar(vtype = GRB.BINARY, name = 'x27')
-x28 = m.addVar(vtype = GRB.BINARY, name = 'x28')
-x29 = m.addVar(vtype = GRB.BINARY, name = 'x29')
+x20 = model.addVar(vtype = GRB.BINARY, name = 'x20')
+x21 = model.addVar(vtype = GRB.BINARY, name = 'x21')
+x23 = model.addVar(vtype = GRB.BINARY, name = 'x23')
+x24 = model.addVar(vtype = GRB.BINARY, name = 'x24')
+x25 = model.addVar(vtype = GRB.BINARY, name = 'x25')
+x26 = model.addVar(vtype = GRB.BINARY, name = 'x26')
+x27 = model.addVar(vtype = GRB.BINARY, name = 'x27')
+x28 = model.addVar(vtype = GRB.BINARY, name = 'x28')
+x29 = model.addVar(vtype = GRB.BINARY, name = 'x29')
 
-x30 = m.addVar(vtype = GRB.BINARY, name = 'x30')
-x31 = m.addVar(vtype = GRB.BINARY, name = 'x31')
-x32 = m.addVar(vtype = GRB.BINARY, name = 'x32')
-x34 = m.addVar(vtype = GRB.BINARY, name = 'x33')
-x35 = m.addVar(vtype = GRB.BINARY, name = 'x34')
-x36 = m.addVar(vtype = GRB.BINARY, name = 'x35')
-x37 = m.addVar(vtype = GRB.BINARY, name = 'x37')
-x38 = m.addVar(vtype = GRB.BINARY, name = 'x38')
-x39 = m.addVar(vtype = GRB.BINARY, name = 'x39')
+x30 = model.addVar(vtype = GRB.BINARY, name = 'x30')
+x31 = model.addVar(vtype = GRB.BINARY, name = 'x31')
+x32 = model.addVar(vtype = GRB.BINARY, name = 'x32')
+x34 = model.addVar(vtype = GRB.BINARY, name = 'x33')
+x35 = model.addVar(vtype = GRB.BINARY, name = 'x34')
+x36 = model.addVar(vtype = GRB.BINARY, name = 'x35')
+x37 = model.addVar(vtype = GRB.BINARY, name = 'x37')
+x38 = model.addVar(vtype = GRB.BINARY, name = 'x38')
+x39 = model.addVar(vtype = GRB.BINARY, name = 'x39')
 
-x40 = m.addVar(vtype = GRB.BINARY, name = 'x40')
-x41 = m.addVar(vtype = GRB.BINARY, name = 'x41')
-x42 = m.addVar(vtype = GRB.BINARY, name = 'x42')
-x43 = m.addVar(vtype = GRB.BINARY, name = 'x43')
-x45 = m.addVar(vtype = GRB.BINARY, name = 'x45')
-x46 = m.addVar(vtype = GRB.BINARY, name = 'x46')
-x47 = m.addVar(vtype = GRB.BINARY, name = 'x47')
-x48 = m.addVar(vtype = GRB.BINARY, name = 'x48')
-x49 = m.addVar(vtype = GRB.BINARY, name = 'x49')
+x40 = model.addVar(vtype = GRB.BINARY, name = 'x40')
+x41 = model.addVar(vtype = GRB.BINARY, name = 'x41')
+x42 = model.addVar(vtype = GRB.BINARY, name = 'x42')
+x43 = model.addVar(vtype = GRB.BINARY, name = 'x43')
+x45 = model.addVar(vtype = GRB.BINARY, name = 'x45')
+x46 = model.addVar(vtype = GRB.BINARY, name = 'x46')
+x47 = model.addVar(vtype = GRB.BINARY, name = 'x47')
+x48 = model.addVar(vtype = GRB.BINARY, name = 'x48')
+x49 = model.addVar(vtype = GRB.BINARY, name = 'x49')
 
-x50 = m.addVar(vtype = GRB.BINARY, name = 'x50')
-x51 = m.addVar(vtype = GRB.BINARY, name = 'x51')
-x52 = m.addVar(vtype = GRB.BINARY, name = 'x52')
-x53 = m.addVar(vtype = GRB.BINARY, name = 'x53')
-x54 = m.addVar(vtype = GRB.BINARY, name = 'x54')
-x56 = m.addVar(vtype = GRB.BINARY, name = 'x56')
-x57 = m.addVar(vtype = GRB.BINARY, name = 'x57')
-x58 = m.addVar(vtype = GRB.BINARY, name = 'x58')
-x59 = m.addVar(vtype = GRB.BINARY, name = 'x59')
+x50 = model.addVar(vtype = GRB.BINARY, name = 'x50')
+x51 = model.addVar(vtype = GRB.BINARY, name = 'x51')
+x52 = model.addVar(vtype = GRB.BINARY, name = 'x52')
+x53 = model.addVar(vtype = GRB.BINARY, name = 'x53')
+x54 = model.addVar(vtype = GRB.BINARY, name = 'x54')
+x56 = model.addVar(vtype = GRB.BINARY, name = 'x56')
+x57 = model.addVar(vtype = GRB.BINARY, name = 'x57')
+x58 = model.addVar(vtype = GRB.BINARY, name = 'x58')
+x59 = model.addVar(vtype = GRB.BINARY, name = 'x59')
 
-x60 = m.addVar(vtype = GRB.BINARY, name = 'x60')
-x61 = m.addVar(vtype = GRB.BINARY, name = 'x61')
-x62 = m.addVar(vtype = GRB.BINARY, name = 'x62')
-x63 = m.addVar(vtype = GRB.BINARY, name = 'x63')
-x64 = m.addVar(vtype = GRB.BINARY, name = 'x64')
-x66 = m.addVar(vtype = GRB.BINARY, name = 'x65')
-x67 = m.addVar(vtype = GRB.BINARY, name = 'x67')
-x68 = m.addVar(vtype = GRB.BINARY, name = 'x68')
-x69 = m.addVar(vtype = GRB.BINARY, name = 'x69')
+x60 = model.addVar(vtype = GRB.BINARY, name = 'x60')
+x61 = model.addVar(vtype = GRB.BINARY, name = 'x61')
+x62 = model.addVar(vtype = GRB.BINARY, name = 'x62')
+x63 = model.addVar(vtype = GRB.BINARY, name = 'x63')
+x64 = model.addVar(vtype = GRB.BINARY, name = 'x64')
+x65 = model.addVar(vtype = GRB.BINARY, name = 'x65')
+x67 = model.addVar(vtype = GRB.BINARY, name = 'x67')
+x68 = model.addVar(vtype = GRB.BINARY, name = 'x68')
+x69 = model.addVar(vtype = GRB.BINARY, name = 'x69')
 
-x70 = m.addVar(vtype = GRB.BINARY, name = 'x70')
-x71 = m.addVar(vtype = GRB.BINARY, name = 'x71')
-x72 = m.addVar(vtype = GRB.BINARY, name = 'x72')
-x73 = m.addVar(vtype = GRB.BINARY, name = 'x73')
-x74 = m.addVar(vtype = GRB.BINARY, name = 'x74')
-x75 = m.addVar(vtype = GRB.BINARY, name = 'x75')
-x76 = m.addVar(vtype = GRB.BINARY, name = 'x76')
-x78 = m.addVar(vtype = GRB.BINARY, name = 'x78')
-x79 = m.addVar(vtype = GRB.BINARY, name = 'x79')
+x70 = model.addVar(vtype = GRB.BINARY, name = 'x70')
+x71 = model.addVar(vtype = GRB.BINARY, name = 'x71')
+x72 = model.addVar(vtype = GRB.BINARY, name = 'x72')
+x73 = model.addVar(vtype = GRB.BINARY, name = 'x73')
+x74 = model.addVar(vtype = GRB.BINARY, name = 'x74')
+x75 = model.addVar(vtype = GRB.BINARY, name = 'x75')
+x76 = model.addVar(vtype = GRB.BINARY, name = 'x76')
+x78 = model.addVar(vtype = GRB.BINARY, name = 'x78')
+x79 = model.addVar(vtype = GRB.BINARY, name = 'x79')
 
-x80 = m.addVar(vtype = GRB.BINARY, name = 'x80')
-x81 = m.addVar(vtype = GRB.BINARY, name = 'x81')
-x82 = m.addVar(vtype = GRB.BINARY, name = 'x82')
-x83 = m.addVar(vtype = GRB.BINARY, name = 'x83')
-x84 = m.addVar(vtype = GRB.BINARY, name = 'x84')
-x85 = m.addVar(vtype = GRB.BINARY, name = 'x85')
-x86 = m.addVar(vtype = GRB.BINARY, name = 'x86')
-x87 = m.addVar(vtype = GRB.BINARY, name = 'x87')
-x89 = m.addVar(vtype = GRB.BINARY, name = 'x89')
+x80 = model.addVar(vtype = GRB.BINARY, name = 'x80')
+x81 = model.addVar(vtype = GRB.BINARY, name = 'x81')
+x82 = model.addVar(vtype = GRB.BINARY, name = 'x82')
+x83 = model.addVar(vtype = GRB.BINARY, name = 'x83')
+x84 = model.addVar(vtype = GRB.BINARY, name = 'x84')
+x85 = model.addVar(vtype = GRB.BINARY, name = 'x85')
+x86 = model.addVar(vtype = GRB.BINARY, name = 'x86')
+x87 = model.addVar(vtype = GRB.BINARY, name = 'x87')
+x89 = model.addVar(vtype = GRB.BINARY, name = 'x89')
 
-x90 = m.addVar(vtype = GRB.BINARY, name = 'x90')
-x91 = m.addVar(vtype = GRB.BINARY, name = 'x91')
-x92 = m.addVar(vtype = GRB.BINARY, name = 'x92')
-x93 = m.addVar(vtype = GRB.BINARY, name = 'x93')
-x94 = m.addVar(vtype = GRB.BINARY, name = 'x94')
-x95 = m.addVar(vtype = GRB.BINARY, name = 'x95')
-x96 = m.addVar(vtype = GRB.BINARY, name = 'x96')
-x97 = m.addVar(vtype = GRB.BINARY, name = 'x97')
-x98 = m.addVar(vtype = GRB.BINARY, name = 'x98')
+x90 = model.addVar(vtype = GRB.BINARY, name = 'x90')
+x91 = model.addVar(vtype = GRB.BINARY, name = 'x91')
+x92 = model.addVar(vtype = GRB.BINARY, name = 'x92')
+x93 = model.addVar(vtype = GRB.BINARY, name = 'x93')
+x94 = model.addVar(vtype = GRB.BINARY, name = 'x94')
+x95 = model.addVar(vtype = GRB.BINARY, name = 'x95')
+x96 = model.addVar(vtype = GRB.BINARY, name = 'x96')
+x97 = model.addVar(vtype = GRB.BINARY, name = 'x97')
+x98 = model.addVar(vtype = GRB.BINARY, name = 'x98')
 
 
 #Yi - whether or not we visit location i
-y1 = m.addVar(vtype = GRB.BINARY, name = 'y1')
-y2 = m.addVar(vtype = GRB.BINARY, name = 'y2')
-y3 = m.addVar(vtype = GRB.BINARY, name = 'y3')
-y4 = m.addVar(vtype = GRB.BINARY, name = 'y4')
-y5 = m.addVar(vtype = GRB.BINARY, name = 'y5')
-y6 = m.addVar(vtype = GRB.BINARY, name = 'y6')
-y7 = m.addVar(vtype = GRB.BINARY, name = 'y7')
-y8 = m.addVar(vtype = GRB.BINARY, name = 'y8')
-y9 = m.addVar(vtype = GRB.BINARY, name = 'y9')
+y0 = 1
+y1 = model.addVar(vtype = GRB.BINARY, name = 'y1')
+y2 = model.addVar(vtype = GRB.BINARY, name = 'y2')
+y3 = model.addVar(vtype = GRB.BINARY, name = 'y3')
+y4 = model.addVar(vtype = GRB.BINARY, name = 'y4')
+y5 = model.addVar(vtype = GRB.BINARY, name = 'y5')
+y6 = model.addVar(vtype = GRB.BINARY, name = 'y6')
+y7 = model.addVar(vtype = GRB.BINARY, name = 'y7')
+y8 = model.addVar(vtype = GRB.BINARY, name = 'y8')
+y9 = model.addVar(vtype = GRB.BINARY, name = 'y9')
 y_list = [y1, y2, y3, y4, y5, y6, y7, y8, y9]
 
 t01 = 21.189620100417
@@ -155,7 +156,7 @@ t41 = t14
 t15 = 37.2155881318567
 t51 = t15
 t16 = 47.6340214552582
-t16 = t61
+t61 = t16
 t17 = 38.0788655293195
 t71 = t17
 t18 = 51.1077293567225
@@ -166,7 +167,7 @@ t91 = t19
 t23 = 71.2530701092942
 t32 = t23
 t24 = 48.1040538832227
-t42 t24
+t42 = t24
 t25 = 58.6003412959344
 t52 = t25
 t26 = 39.3954312071844
@@ -249,20 +250,9 @@ k8 = 9
 k9 = 10
 k_list = [k1, k2, k3, k4, k5, k6, k7, k8, k9]
 
-
-(x11 * y1) + (x12 * y1)
-
-
-vars = model.addVars(dist.keys(), obj=dist, vtype=GRB.BINARY, name='e')
-
-# for i,j in vars.keys():
-#     vars[j,i] = vars[i,j]
-
-for i,j in vars.keys():
-    print(vars[i,j])
-
 model.addConstr(sum([k1*y1 + k2*y2 + k3*y3 + k4*y4 + k5*y5 + k6*y6 + k7*y7 + k8*y8 + k9*y9]) <= c)
 
+#must enter each location no more than once, no less than 0
 model.addConstr(sum([x10*y1 + x12*y1 + x13*y1 + x14*y1 + x15*y1 + x16*y1 + x17*y1 + x18*y1 + x19*y1]) <= 1)
 model.addConstr(sum([x20*y2 + x21*y2 + x23*y1 + x24*y1 + x25*y1 + x26*y1 + x27*y1 + x28*y1 + x29*y1]) <= 1)
 model.addConstr(sum([x30*y3 + x31*y3 + x32*y3 + x34*y3 + x35*y3 + x36*y3 + x37*y3 + x38*y3 + x39*y3]) <= 1)
@@ -273,18 +263,55 @@ model.addConstr(sum([x70*y7 + x71*y7 + x72*y7 + x73*y7 + x74*y7 + x75*y7 + x76*y
 model.addConstr(sum([x80*y8 + x81*y8 + x82*y8 + x83*y8 + x84*y8 + x85*y8 + x86*y8 + x87*y8 + x89*y8]) <= 1)
 model.addConstr(sum([x90*y9 + x91*y9 + x92*y9 + x93*y9 + x94*y9 + x95*y9 + x96*y9 + x97*y9 + x98*y9]) <= 1)
 
+model.addConstr(sum([x10*y1 + x12*y1 + x13*y1 + x14*y1 + x15*y1 + x16*y1 + x17*y1 + x18*y1 + x19*y1]) >= 0)
+model.addConstr(sum([x20*y2 + x21*y2 + x23*y1 + x24*y1 + x25*y1 + x26*y1 + x27*y1 + x28*y1 + x29*y1]) >= 0)
+model.addConstr(sum([x30*y3 + x31*y3 + x32*y3 + x34*y3 + x35*y3 + x36*y3 + x37*y3 + x38*y3 + x39*y3]) >= 0)
+model.addConstr(sum([x40*y4 + x41*y4 + x42*y4 + x43*y4 + x45*y4 + x46*y4 + x47*y4 + x48*y4 + x49*y4]) >= 0)
+model.addConstr(sum([x50*y5 + x51*y5 + x52*y5 + x53*y5 + x54*y5 + x56*y5 + x57*y5 + x58*y5 + x59*y5]) >= 0)
+model.addConstr(sum([x60*y6 + x61*y6 + x62*y6 + x63*y6 + x64*y6 + x65*y6 + x67*y6 + x68*y6 + x69*y6]) >= 0)
+model.addConstr(sum([x70*y7 + x71*y7 + x72*y7 + x73*y7 + x74*y7 + x75*y7 + x76*y7 + x78*y7 + x79*y7]) >= 0)
+model.addConstr(sum([x80*y8 + x81*y8 + x82*y8 + x83*y8 + x84*y8 + x85*y8 + x86*y8 + x87*y8 + x89*y8]) >= 0)
+model.addConstr(sum([x90*y9 + x91*y9 + x92*y9 + x93*y9 + x94*y9 + x95*y9 + x96*y9 + x97*y9 + x98*y9]) >= 0)
+
+#must leave each location no more than once, no less than 0
+model.addConstr(sum([x01*y1 + x21*y1 + x31*y1 + x41*y1 + x51*y1 + x61*y1 + x71*y1 + x81*y1 + x91*y1]) <= 1)
+model.addConstr(sum([x02*y2 + x12*y2 + x32*y2 + x42*y2 + x52*y2 + x62*y2 + x72*y2 + x82*y2 + x92*y2]) <= 1)
+model.addConstr(sum([x03*y3 + x13*y3 + x23*y3 + x43*y3 + x53*y3 + x63*y3 + x73*y3 + x83*y3 + x93*y3]) <= 1)
+model.addConstr(sum([x04*y4 + x14*y4 + x24*y4 + x34*y4 + x54*y4 + x64*y4 + x74*y4 + x84*y4 + x94*y4]) <= 1)
+model.addConstr(sum([x05*y5 + x15*y5 + x25*y5 + x35*y5 + x45*y5 + x65*y5 + x75*y5 + x85*y5 + x95*y5]) <= 1)
+model.addConstr(sum([x06*y6 + x16*y6 + x26*y6 + x36*y6 + x46*y6 + x56*y6 + x76*y6 + x86*y6 + x96*y6]) <= 1)
+model.addConstr(sum([x07*y7 + x17*y7 + x27*y7 + x37*y7 + x47*y7 + x57*y7 + x67*y7 + x87*y7 + x97*y7]) <= 1)
+model.addConstr(sum([x08*y8 + x18*y8 + x28*y8 + x38*y8 + x48*y8 + x58*y8 + x68*y8 + x78*y8 + x98*y8]) <= 1)
+model.addConstr(sum([x09*y9 + x19*y9 + x29*y9 + x39*y9 + x49*y9 + x59*y9 + x69*y9 + x79*y9 + x89*y9]) <= 1)
+
+model.addConstr(sum([x01*y1 + x21*y1 + x31*y1 + x41*y1 + x51*y1 + x61*y1 + x71*y1 + x81*y1 + x91*y1]) >= 0)
+model.addConstr(sum([x02*y2 + x12*y2 + x32*y2 + x42*y2 + x52*y2 + x62*y2 + x72*y2 + x82*y2 + x92*y2]) >= 0)
+model.addConstr(sum([x03*y3 + x13*y3 + x23*y3 + x43*y3 + x53*y3 + x63*y3 + x73*y3 + x83*y3 + x93*y3]) >= 0)
+model.addConstr(sum([x04*y4 + x14*y4 + x24*y4 + x34*y4 + x54*y4 + x64*y4 + x74*y4 + x84*y4 + x94*y4]) >= 0)
+model.addConstr(sum([x05*y5 + x15*y5 + x25*y5 + x35*y5 + x45*y5 + x65*y5 + x75*y5 + x85*y5 + x95*y5]) >= 0)
+model.addConstr(sum([x06*y6 + x16*y6 + x26*y6 + x36*y6 + x46*y6 + x56*y6 + x76*y6 + x86*y6 + x96*y6]) >= 0)
+model.addConstr(sum([x07*y7 + x17*y7 + x27*y7 + x37*y7 + x47*y7 + x57*y7 + x67*y7 + x87*y7 + x97*y7]) >= 0)
+model.addConstr(sum([x08*y8 + x18*y8 + x28*y8 + x38*y8 + x48*y8 + x58*y8 + x68*y8 + x78*y8 + x98*y8]) >= 0)
+model.addConstr(sum([x09*y9 + x19*y9 + x29*y9 + x39*y9 + x49*y9 + x59*y9 + x69*y9 + x79*y9 + x89*y9]) >= 0)
+
+#for leaving starting point
+model.addConstr(sum([x01*y0 + x02*y0 + x03*y0 + x04*y0 + x05*y0 + x06*y0 + x07*y0 + x08*y0 + x09*y0]) <= 1) 
+model.addConstr(sum([x01*y0 + x02*y0 + x03*y0 + x04*y0 + x05*y0 + x06*y0 + x07*y0 + x08*y0 + x09*y0]) >= 1)
+
+#for entering end point
+model.addConstr(sum([x10*y0 + x20*y0 + x30*y0 + x40*y0 + x50*y0 + x60*y0 + x70*y0 + x80*y0 + x90*y0]) <= 1)
+model.addConstr(sum([x10*y0 + x20*y0 + x30*y0 + x40*y0 + x50*y0 + x60*y0 + x70*y0 + x80*y0 + x90*y0]) >= 1)
 
 
+# for i in range(len(y_list)):
 
-for i in range(len(y_list)):
-
-    for j in range(len(y_list)):
-        if i == j:
-            continue
-        else:
-            model.addConstr(
+#     for j in range(len(y_list)):
+#         if i == j:
+#             continue
+#         else:
+#             model.addConstr(
 
 
 model.setObjective(sum([p1*y1, p2*y2, p3*y3, p3*y4, p5*y5, p6*y6, p7*y7, p8*y8, p9*y9]), GRB.MAXIMIZE)
-model.optimize
+model.optimize()
 
