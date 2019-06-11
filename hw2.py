@@ -345,18 +345,5 @@ x08*t08 + x18*t18 + x28*t28 + x38*t38 + x48*t48 + x58*t58 + x68*t68 + x78*t78 + 
 x09*t09 + x19*t19 + x29*t29 + x39*t39 + x49*t49 + x59*t59 + x69*t69 + x79*t79 + x89*t99 +
 
 
-
-
-
-
-# for i in range(len(y_list))
-
-#     for j in range(len(y_list)):
-#         if i == j:
-#             continue
-#         else:
-#             model.addConstr(
-
-
 model.setObjective(sum([p1*y1, p2*y2, p3*y3, p3*y4, p5*y5, p6*y6, p7*y7, p8*y8, p9*y9]), GRB.MAXIMIZE)
 model.optimize()
