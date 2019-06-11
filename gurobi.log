@@ -1398,3 +1398,383 @@ Solution count 1: 26
 
 Optimal solution found (tolerance 1.00e-04)
 Best objective 2.600000000000e+01, best bound 2.600000000000e+01, gap 0.0000%
+
+Gurobi 8.1.1 (win64, Python) logging started 06/11/19 00:08:04
+
+Academic license - for non-commercial use only
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Optimize a model with 6 rows, 99 columns and 135 nonzeros
+Model has 36 quadratic constraints
+Variable types: 0 continuous, 99 integer (99 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+02]
+  QMatrix range    [1e+00, 1e+00]
+  Objective range  [2e+00, 9e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+02]
+  QRHS range       [1e+00, 1e+00]
+Presolve removed 2 rows and 0 columns
+Presolve time: 0.01s
+Presolved: 4 rows, 99 columns, 115 nonzeros
+Variable types: 0 continuous, 99 integer (99 binary)
+
+Root relaxation: objective 2.725000e+01, 3 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   27.25000    0    1          -   27.25000      -     -    0s
+H    0     0                      26.0000000   27.25000  4.81%     -    0s
+     0     0 infeasible    0        26.00000   26.00000  0.00%     -    0s
+
+Explored 1 nodes (3 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 26 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.600000000000e+01, best bound 2.600000000000e+01, gap 0.0000%
+
+Gurobi 8.1.1 (win64, Python) logging started 06/11/19 00:31:22
+
+Academic license - for non-commercial use only
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+
+Gurobi 8.1.1 (win64, Python) logging started 06/11/19 00:33:25
+
+Academic license - for non-commercial use only
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+
+Gurobi 8.1.1 (win64, Python) logging started 06/11/19 00:33:41
+
+Academic license - for non-commercial use only
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+
+Gurobi 8.1.1 (win64, Python) logging started 06/11/19 00:33:56
+
+Academic license - for non-commercial use only
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+
+Gurobi 8.1.1 (win64, Python) logging started 06/11/19 00:34:06
+
+Academic license - for non-commercial use only
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+
+Gurobi 8.1.1 (win64, Python) logging started 06/11/19 00:34:17
+
+Academic license - for non-commercial use only
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+
+Gurobi 8.1.1 (win64, Python) logging started 06/11/19 00:34:26
+
+Academic license - for non-commercial use only
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+
+Gurobi 8.1.1 (win64, Python) logging started 06/11/19 00:34:53
+
+Academic license - for non-commercial use only
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+
+Gurobi 8.1.1 (win64, Python) logging started 06/11/19 00:35:00
+
+Academic license - for non-commercial use only
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+
+Gurobi 8.1.1 (win64, Python) logging started 06/11/19 00:35:03
+
+Academic license - for non-commercial use only
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+
+Gurobi 8.1.1 (win64, Python) logging started 06/11/19 00:35:14
+
+Academic license - for non-commercial use only
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+
+Gurobi 8.1.1 (win64, Python) logging started 06/11/19 00:35:42
+
+Academic license - for non-commercial use only
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Optimize a model with 6 rows, 99 columns and 135 nonzeros
+Model has 36 quadratic constraints
+Variable types: 0 continuous, 99 integer (99 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+02]
+  QMatrix range    [1e+00, 1e+00]
+  Objective range  [2e+00, 9e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+02]
+  QRHS range       [1e+00, 1e+00]
+Presolve removed 2 rows and 16 columns
+Presolve time: 0.02s
+Presolved: 4 rows, 83 columns, 99 nonzeros
+Variable types: 0 continuous, 83 integer (83 binary)
+
+Root relaxation: objective 2.725000e+01, 3 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   27.25000    0    1          -   27.25000      -     -    0s
+H    0     0                      26.0000000   27.25000  4.81%     -    0s
+     0     0 infeasible    0        26.00000   26.00000  0.00%     -    0s
+
+Explored 1 nodes (3 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 26 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.600000000000e+01, best bound 2.600000000000e+01, gap 0.0000%
+
+Gurobi 8.1.1 (win64, Python) logging started 06/11/19 00:35:56
+
+Academic license - for non-commercial use only
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Optimize a model with 6 rows, 99 columns and 135 nonzeros
+Model has 36 quadratic constraints
+Variable types: 0 continuous, 99 integer (99 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+02]
+  QMatrix range    [1e+00, 1e+00]
+  Objective range  [2e+00, 9e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+02]
+  QRHS range       [1e+00, 1e+00]
+Presolve removed 2 rows and 16 columns
+Presolve time: 0.02s
+Presolved: 4 rows, 83 columns, 99 nonzeros
+Variable types: 0 continuous, 83 integer (83 binary)
+
+Root relaxation: objective 2.725000e+01, 3 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   27.25000    0    1          -   27.25000      -     -    0s
+H    0     0                      26.0000000   27.25000  4.81%     -    0s
+     0     0 infeasible    0        26.00000   26.00000  0.00%     -    0s
+
+Explored 1 nodes (3 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 26 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.600000000000e+01, best bound 2.600000000000e+01, gap 0.0000%
+
+Gurobi 8.1.1 (win64, Python) logging started 06/11/19 00:52:44
+
+Academic license - for non-commercial use only
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+
+Gurobi 8.1.1 (win64, Python) logging started 06/11/19 00:54:40
+
+Academic license - for non-commercial use only
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Optimize a model with 6 rows, 99 columns and 135 nonzeros
+Model has 36 quadratic constraints
+Variable types: 0 continuous, 99 integer (99 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+02]
+  QMatrix range    [1e+00, 1e+00]
+  Objective range  [2e+00, 9e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+02]
+  QRHS range       [1e+00, 1e+00]
+Presolve removed 2 rows and 16 columns
+Presolve time: 0.02s
+Presolved: 4 rows, 83 columns, 99 nonzeros
+Variable types: 0 continuous, 83 integer (83 binary)
+
+Root relaxation: objective 2.725000e+01, 3 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   27.25000    0    1          -   27.25000      -     -    0s
+H    0     0                      26.0000000   27.25000  4.81%     -    0s
+     0     0 infeasible    0        26.00000   26.00000  0.00%     -    0s
+
+Explored 1 nodes (3 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 26 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.600000000000e+01, best bound 2.600000000000e+01, gap 0.0000%
+
+Gurobi 8.1.1 (win64, Python) logging started 06/11/19 00:55:21
+
+Academic license - for non-commercial use only
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Optimize a model with 6 rows, 99 columns and 135 nonzeros
+Model has 36 quadratic constraints
+Variable types: 0 continuous, 99 integer (99 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+02]
+  QMatrix range    [1e+00, 1e+00]
+  Objective range  [2e+00, 9e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+02]
+  QRHS range       [1e+00, 1e+00]
+Presolve removed 2 rows and 16 columns
+Presolve time: 0.02s
+Presolved: 4 rows, 83 columns, 99 nonzeros
+Variable types: 0 continuous, 83 integer (83 binary)
+
+Root relaxation: objective 2.725000e+01, 3 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   27.25000    0    1          -   27.25000      -     -    0s
+H    0     0                      26.0000000   27.25000  4.81%     -    0s
+     0     0 infeasible    0        26.00000   26.00000  0.00%     -    0s
+
+Explored 1 nodes (3 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 26 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.600000000000e+01, best bound 2.600000000000e+01, gap 0.0000%
+
+Gurobi 8.1.1 (win64, Python) logging started 06/11/19 01:00:25
+
+Academic license - for non-commercial use only
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+
+Gurobi 8.1.1 (win64, Python) logging started 06/11/19 01:00:58
+
+Academic license - for non-commercial use only
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Optimize a model with 6 rows, 99 columns and 135 nonzeros
+Model has 36 quadratic constraints
+Variable types: 0 continuous, 99 integer (99 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+02]
+  QMatrix range    [1e+00, 1e+00]
+  Objective range  [2e+00, 9e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+02]
+  QRHS range       [1e+00, 1e+00]
+Presolve removed 2 rows and 16 columns
+Presolve time: 0.02s
+Presolved: 4 rows, 83 columns, 99 nonzeros
+Variable types: 0 continuous, 83 integer (83 binary)
+
+Root relaxation: objective 2.725000e+01, 3 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   27.25000    0    1          -   27.25000      -     -    0s
+H    0     0                      26.0000000   27.25000  4.81%     -    0s
+     0     0 infeasible    0        26.00000   26.00000  0.00%     -    0s
+
+Explored 1 nodes (3 simplex iterations) in 0.04 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 26 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.600000000000e+01, best bound 2.600000000000e+01, gap 0.0000%
+
+Gurobi 8.1.1 (win64, Python) logging started 06/11/19 01:01:20
+
+Academic license - for non-commercial use only
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+
+Gurobi 8.1.1 (win64, Python) logging started 06/11/19 01:02:01
+
+Academic license - for non-commercial use only
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Optimize a model with 6 rows, 99 columns and 135 nonzeros
+Model has 36 quadratic constraints
+Variable types: 0 continuous, 99 integer (99 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+02]
+  QMatrix range    [1e+00, 1e+00]
+  Objective range  [2e+00, 9e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+02]
+  QRHS range       [1e+00, 1e+00]
+Presolve removed 2 rows and 16 columns
+Presolve time: 0.02s
+Presolved: 4 rows, 83 columns, 99 nonzeros
+Variable types: 0 continuous, 83 integer (83 binary)
+
+Root relaxation: objective 2.725000e+01, 3 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   27.25000    0    1          -   27.25000      -     -    0s
+H    0     0                      26.0000000   27.25000  4.81%     -    0s
+     0     0 infeasible    0        26.00000   26.00000  0.00%     -    0s
+
+Explored 1 nodes (3 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 26 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.600000000000e+01, best bound 2.600000000000e+01, gap 0.0000%
+
+Gurobi 8.1.1 (win64, Python) logging started 06/11/19 01:02:13
+
+Academic license - for non-commercial use only
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Optimize a model with 6 rows, 99 columns and 135 nonzeros
+Model has 36 quadratic constraints
+Variable types: 0 continuous, 99 integer (99 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+02]
+  QMatrix range    [1e+00, 1e+00]
+  Objective range  [2e+00, 9e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 2e+02]
+  QRHS range       [1e+00, 1e+00]
+Presolve removed 2 rows and 16 columns
+Presolve time: 0.02s
+Presolved: 4 rows, 83 columns, 99 nonzeros
+Variable types: 0 continuous, 83 integer (83 binary)
+
+Root relaxation: objective 2.725000e+01, 3 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   27.25000    0    1          -   27.25000      -     -    0s
+H    0     0                      26.0000000   27.25000  4.81%     -    0s
+     0     0 infeasible    0        26.00000   26.00000  0.00%     -    0s
+
+Explored 1 nodes (3 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 26 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.600000000000e+01, best bound 2.600000000000e+01, gap 0.0000%
